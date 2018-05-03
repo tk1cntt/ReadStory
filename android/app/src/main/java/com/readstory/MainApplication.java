@@ -3,6 +3,11 @@ package com.readstory;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import fm.indiecast.rnaudiostreamer.RNAudioStreamerPackage;
+import com.zmxv.RNSound.RNSoundPackage;
+import com.tanguyantoine.react.MusicControl;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -24,6 +29,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNAudioStreamerPackage(),
+            new RNSoundPackage(),
+            new MusicControl(),
+            new RNFetchBlobPackage(),
+            new ReactNativeConfigPackage(),
             new VectorIconsPackage()
       );
     }
