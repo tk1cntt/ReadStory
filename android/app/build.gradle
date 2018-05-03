@@ -137,6 +137,10 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-audio-streamer')
+    compile project(':react-native-sound')
+    compile project(':react-native-music-control')
+    compile project(':react-native-config')
     compile project(':react-native-i18n')
     compile project(':react-native-vector-icons')
     compile fileTree(dir: "libs", include: ["*.jar"])

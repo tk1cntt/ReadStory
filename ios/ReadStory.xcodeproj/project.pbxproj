@@ -50,6 +50,22 @@
 		62F0192F1F5B400AA27F8EC8 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1D398A8851946CAA93A7F02 /* Zocial.ttf */; };
 		72A4198BCFFD487581C03164 /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 412972D984A245EA94271FDF /* libRNI18n.a */; };
 		0C128D18C2A2484DBFE43177 /* RNI18nTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 37D2B0DD933D47BDB38E7BFC /* RNI18nTests.xctest */; };
+		64C4370A781F424AAA9A6C9E /* libReactNativeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0214152286D149BFA44E5886 /* libReactNativeConfig.a */; };
+		9CD140DF2FA1490FBF67C711 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C56D8FDBBD1A4C90B373B36F /* Entypo.ttf */; };
+		EFE368B1A51240E5816D3174 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB959CA755BE47BC99080B60 /* EvilIcons.ttf */; };
+		444085EC952847BD9DA82EE9 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 093FFFD7EF6F47D88783B776 /* FontAwesome.ttf */; };
+		BC332C6D3D1D4F42BA8995F4 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C73B0255F35B4DFE847B95B1 /* Foundation.ttf */; };
+		6AC77F5643E24DE1AB4B44DB /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C509D47330F7446093A8FFA5 /* Ionicons.ttf */; };
+		52F96229368E45E0B70154E8 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF9DC7DBA0364AAE86C2A9D6 /* MaterialIcons.ttf */; };
+		2FCEBD74867B4531B9C8BFDC /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E63E8B405E9486B8AA915C9 /* Octicons.ttf */; };
+		C8717F7530774026B6878D21 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 116EEAC095324C2EB5AAAF7C /* Roboto_medium.ttf */; };
+		A267AF93740C4B88B383D332 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A9C776C711E4598954630FC /* Roboto.ttf */; };
+		9AD75A4CCE434200A90BD016 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F31344C7AE7540D882636426 /* SimpleLineIcons.ttf */; };
+		FA45D97DB71C426E8A05816A /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E5D503FFD254915B2E005EC /* Zocial.ttf */; };
+		EC0717BF6C9D4F0BABBF381C /* libMusicControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C3AB1CC89C4A5DA6810D95 /* libMusicControl.a */; };
+		FD66F54B540B4D1083EA370F /* libMusicControl-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFFCFD70C224CB8A23CD70D /* libMusicControl-tvOS.a */; };
+		926AD38634094F2D82DEFFAC /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C53917BABDA43B7958AB8BB /* libRNSound.a */; };
+		CA49A40A9E1346A6B66C2DA9 /* libRNAudioStreamer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD44BD7432DB4EAD82A4C319 /* libRNAudioStreamer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -370,6 +386,26 @@
 		D7FD8FB5651548B483A238CC /* RNI18n.xcodeproj */ = {isa = PBXFileReference; name = "RNI18n.xcodeproj"; path = "../node_modules/react-native-i18n/RNI18n.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		412972D984A245EA94271FDF /* libRNI18n.a */ = {isa = PBXFileReference; name = "libRNI18n.a"; path = "libRNI18n.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		37D2B0DD933D47BDB38E7BFC /* RNI18nTests.xctest */ = {isa = PBXFileReference; name = "RNI18nTests.xctest"; path = "RNI18nTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
+		66240983ACA749EAB0B66D77 /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeConfig.xcodeproj"; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		0214152286D149BFA44E5886 /* libReactNativeConfig.a */ = {isa = PBXFileReference; name = "libReactNativeConfig.a"; path = "libReactNativeConfig.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		C56D8FDBBD1A4C90B373B36F /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB959CA755BE47BC99080B60 /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		093FFFD7EF6F47D88783B776 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C73B0255F35B4DFE847B95B1 /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C509D47330F7446093A8FFA5 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF9DC7DBA0364AAE86C2A9D6 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E63E8B405E9486B8AA915C9 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		116EEAC095324C2EB5AAAF7C /* Roboto_medium.ttf */ = {isa = PBXFileReference; name = "Roboto_medium.ttf"; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6A9C776C711E4598954630FC /* Roboto.ttf */ = {isa = PBXFileReference; name = "Roboto.ttf"; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F31344C7AE7540D882636426 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8E5D503FFD254915B2E005EC /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A046B644984B426787259FD2 /* MusicControl.xcodeproj */ = {isa = PBXFileReference; name = "MusicControl.xcodeproj"; path = "../node_modules/react-native-music-control/ios/MusicControl.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		14C3AB1CC89C4A5DA6810D95 /* libMusicControl.a */ = {isa = PBXFileReference; name = "libMusicControl.a"; path = "libMusicControl.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		3CFFCFD70C224CB8A23CD70D /* libMusicControl-tvOS.a */ = {isa = PBXFileReference; name = "libMusicControl-tvOS.a"; path = "libMusicControl-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		09EDE27CB45A4165A04AF7F6 /* RNSound.xcodeproj */ = {isa = PBXFileReference; name = "RNSound.xcodeproj"; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		4C53917BABDA43B7958AB8BB /* libRNSound.a */ = {isa = PBXFileReference; name = "libRNSound.a"; path = "libRNSound.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		15A82536F0F247578565F6AD /* RNAudioStreamer.xcodeproj */ = {isa = PBXFileReference; name = "RNAudioStreamer.xcodeproj"; path = "../node_modules/react-native-audio-streamer/ios/RNAudioStreamer.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		FD44BD7432DB4EAD82A4C319 /* libRNAudioStreamer.a */ = {isa = PBXFileReference; name = "libRNAudioStreamer.a"; path = "libRNAudioStreamer.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +437,10 @@
 				FA1C27051AB94E7D9621F2BB /* libRNVectorIcons.a in Frameworks */,
 				72A4198BCFFD487581C03164 /* libRNI18n.a in Frameworks */,
 				0C128D18C2A2484DBFE43177 /* RNI18nTests.xctest in Resources */,
+				64C4370A781F424AAA9A6C9E /* libReactNativeConfig.a in Frameworks */,
+				EC0717BF6C9D4F0BABBF381C /* libMusicControl.a in Frameworks */,
+				926AD38634094F2D82DEFFAC /* libRNSound.a in Frameworks */,
+				CA49A40A9E1346A6B66C2DA9 /* libRNAudioStreamer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +456,7 @@
 				2D02E4C61E0B4AEC006451C7 /* libRCTSettings-tvOS.a in Frameworks */,
 				2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */,
 				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
+				FD66F54B540B4D1083EA370F /* libMusicControl-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +630,10 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				81B6F7F9B2AC457E87964F2A /* RNVectorIcons.xcodeproj */,
 				D7FD8FB5651548B483A238CC /* RNI18n.xcodeproj */,
+				66240983ACA749EAB0B66D77 /* ReactNativeConfig.xcodeproj */,
+				A046B644984B426787259FD2 /* MusicControl.xcodeproj */,
+				09EDE27CB45A4165A04AF7F6 /* RNSound.xcodeproj */,
+				15A82536F0F247578565F6AD /* RNAudioStreamer.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -650,6 +695,17 @@
 				DC4FDE665836481EAA12FC18 /* Octicons.ttf */,
 				9BDF7D79667C4E60951C48CE /* SimpleLineIcons.ttf */,
 				D1D398A8851946CAA93A7F02 /* Zocial.ttf */,
+				C56D8FDBBD1A4C90B373B36F /* Entypo.ttf */,
+				CB959CA755BE47BC99080B60 /* EvilIcons.ttf */,
+				093FFFD7EF6F47D88783B776 /* FontAwesome.ttf */,
+				C73B0255F35B4DFE847B95B1 /* Foundation.ttf */,
+				C509D47330F7446093A8FFA5 /* Ionicons.ttf */,
+				BF9DC7DBA0364AAE86C2A9D6 /* MaterialIcons.ttf */,
+				4E63E8B405E9486B8AA915C9 /* Octicons.ttf */,
+				116EEAC095324C2EB5AAAF7C /* Roboto_medium.ttf */,
+				6A9C776C711E4598954630FC /* Roboto.ttf */,
+				F31344C7AE7540D882636426 /* SimpleLineIcons.ttf */,
+				8E5D503FFD254915B2E005EC /* Zocial.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1111,6 +1167,17 @@
 				B7C2180CC609404DB8BD7E12 /* Octicons.ttf in Resources */,
 				9F228E4AD659483CA3B199E3 /* SimpleLineIcons.ttf in Resources */,
 				62F0192F1F5B400AA27F8EC8 /* Zocial.ttf in Resources */,
+				9CD140DF2FA1490FBF67C711 /* Entypo.ttf in Resources */,
+				EFE368B1A51240E5816D3174 /* EvilIcons.ttf in Resources */,
+				444085EC952847BD9DA82EE9 /* FontAwesome.ttf in Resources */,
+				BC332C6D3D1D4F42BA8995F4 /* Foundation.ttf in Resources */,
+				6AC77F5643E24DE1AB4B44DB /* Ionicons.ttf in Resources */,
+				52F96229368E45E0B70154E8 /* MaterialIcons.ttf in Resources */,
+				2FCEBD74867B4531B9C8BFDC /* Octicons.ttf in Resources */,
+				C8717F7530774026B6878D21 /* Roboto_medium.ttf in Resources */,
+				A267AF93740C4B88B383D332 /* Roboto.ttf in Resources */,
+				9AD75A4CCE434200A90BD016 /* SimpleLineIcons.ttf in Resources */,
+				FA45D97DB71C426E8A05816A /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1244,14 +1311,15 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadStory.app/ReadStory";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-music-control\ios",
+					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)\..\node_modules\react-native-audio-streamer\ios\RNAudioStreamer/**",
 				);
 			};
 			name = Debug;
@@ -1272,14 +1340,15 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadStory.app/ReadStory";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-music-control\ios",
+					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)\..\node_modules\react-native-audio-streamer\ios\RNAudioStreamer/**",
 				);
 			};
 			name = Release;
@@ -1303,6 +1372,10 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-music-control\ios",
+					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)\..\node_modules\react-native-audio-streamer\ios\RNAudioStreamer/**",
 				);
 			};
 			name = Debug;
@@ -1325,6 +1398,10 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-music-control\ios",
+					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)\..\node_modules\react-native-audio-streamer\ios\RNAudioStreamer/**",
 				);
 			};
 			name = Release;
@@ -1354,14 +1431,15 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-music-control\ios",
+					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)\..\node_modules\react-native-audio-streamer\ios\RNAudioStreamer/**",
 				);
 			};
 			name = Debug;
@@ -1391,14 +1469,15 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-music-control\ios",
+					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)\..\node_modules\react-native-audio-streamer\ios\RNAudioStreamer/**",
 				);
 			};
 			name = Release;
@@ -1427,14 +1506,15 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-music-control\ios",
+					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)\..\node_modules\react-native-audio-streamer\ios\RNAudioStreamer/**",
 				);
 			};
 			name = Debug;
@@ -1463,14 +1543,15 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-music-control\ios",
+					"$(SRCROOT)\..\node_modules\react-native-sound\RNSound",
+					"$(SRCROOT)\..\node_modules\react-native-audio-streamer\ios\RNAudioStreamer/**",
 				);
 			};
 			name = Release;
