@@ -6,33 +6,55 @@ import { connect } from 'react-redux'
 import { Icon } from 'native-base';
 
 import { AudioControls } from 'react-native-hue-player';
-import thumbnail from './thumbnail.jpg';
+
+import caykheThumbnail from './cay_khe.jpg';
+import chubetihonThumbnail from './chu_be_ti_hon.jpg';
+import soduaThumbnail from './so_dua.jpg';
+import sutichtraucauThumbnail from './su_tich_trau_cau.jpg';
+
 // Styles
 // import styles from './Styles/HomeScreenStyle'
 
 const playlist = [
   {
     key: 'audio01',
-    title: 'Hino do Brasil',
-    author: 'Francisco Manuel da Silva',
-    url: 'http://www.noiseaddicts.com/samples_1w72b820/4170.mp3',
-    thumbnailUri: 'http://www.aprocura.com.br/wp-content/uploads/2012/10/Significado-Cores-Bandeira-do-Brasil.jpg'
+    title: 'Cay khe',
+    author: 'Chuyen co tich dan gian',
+    url: '',
+    path: 'cay_khe.mp3',
+    thumbnailLocal: caykheThumbnail
   },
   {
     key: 'audio02',
-    title: 'Sweet Dreams - Eurythmics (Funk Remix)',
-    author: 'Senhor Sider',
+    title: 'Chu be ti hon',
+    author: 'Chuyen co tich dan gian',
     url: '',
-    path: 'audio1.mp3',
-    thumbnailLocal: thumbnail
+    path: 'chu_be_ti_hon.mp3',
+    thumbnailLocal: chubetihonThumbnail
+  },
+  {
+    key: 'audio03',
+    title: 'So dua',
+    author: 'Chuyen co tich dan gian',
+    url: '',
+    path: 'so_dua.mp3',
+    thumbnailLocal: soduaThumbnail
+  },
+  {
+    key: 'audio04',
+    title: 'Su tich trau cau',
+    author: 'Chuyen co tich dan gian',
+    url: '',
+    path: 'su_tich_trau_cau.mp3',
+    thumbnailLocal: sutichtraucauThumbnail
   }
 ];
 
 class HomeScreen extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Home', 
-    tabBarIcon: () => <Icon ios='ios-home' android="md-home" style={{fontSize: 24, color: 'white'}}/> 
-  } 
+    tabBarLabel: 'Home',
+    tabBarIcon: () => <Icon ios='ios-home' android="md-home" style={{fontSize: 24, color: 'white'}}/>
+  }
 
   render() {
     console.log('playlist', playlist);
