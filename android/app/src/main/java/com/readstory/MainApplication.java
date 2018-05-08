@@ -3,6 +3,8 @@ package com.readstory;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import com.magus.fblogin.FacebookLoginPackage;
 import fm.indiecast.rnaudiostreamer.RNAudioStreamerPackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.tanguyantoine.react.MusicControl;
@@ -29,6 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNGoogleSigninPackage(),
+            new FacebookLoginPackage(),
             new RNAudioStreamerPackage(),
             new RNSoundPackage(),
             new MusicControl(),
