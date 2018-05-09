@@ -7902,9 +7902,9 @@ react-native-music-control@^0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/react-native-music-control/-/react-native-music-control-0.4.13.tgz#717a0f77ccda9b324d06e421b145ef21c189bdc0"
 
-react-native-music-control@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/react-native-music-control/-/react-native-music-control-0.5.4.tgz#ec00236e4dccf444ccdc5f1cd003507f5d6b3feb"
+"react-native-music-control@https://github.com/tk1cntt/react-native-music-control/tarball/my_features":
+  version "0.5.2"
+  resolved "https://github.com/tk1cntt/react-native-music-control/tarball/my_features#7f3c18eefc9677920f3cb2d321196df979e635bf"
 
 react-native-progress@^3.4.0:
   version "3.4.0"
