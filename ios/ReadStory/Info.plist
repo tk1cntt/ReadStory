@@ -54,6 +54,26 @@
 				<true/>
 			</dict>
 		</dict>
+		<key>CFBundleURLTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>fb503394359855978</string>
+				</array>
+			</dict>
+		</array>
+		<key>FacebookAppID</key>
+		<string>503394359855978</string>
+		<key>FacebookDisplayName</key>
+		<string>Hakira App</string>
+		<key>LSApplicationQueriesSchemes</key>
+		<array>
+			<string>fbapi</string>
+			<string>fb-messenger-share-api</string>
+			<string>fbauth2</string>
+			<string>fbshareextension</string>
+		</array>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
