@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ReadStory</string>
-    <string name="facebook_app_id">2098897717102044</string>
+    <string name="facebook_app_id">503394359855978</string>
+    <string name="fb_login_protocol_scheme">fb503394359855978</string>
 </resources>
