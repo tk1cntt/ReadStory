@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "646853343307",
+    "firebase_url": "https://my-apps-store-demo.firebaseio.com",
+    "project_id": "my-apps-store-demo",
+    "storage_bucket": "my-apps-store-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646853343307:android:ec1bdc2b80dea09d",
+        "android_client_info": {
+          "package_name": "com.readstory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646853343307-tjnvrtbnbu50qv9uvm0spvdooo400s8f.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "646853343307-n4u2tno8h21i5qvf0pc8soeqsvvnidmf.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "646853343307.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKG7K_NzDsSGdr8NHbXE4zq2CLnJ4hQfI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
