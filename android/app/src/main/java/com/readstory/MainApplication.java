@@ -7,7 +7,8 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
 
 import io.invertase.firebase.RNFirebasePackage;
-import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage; // Firebase Auth
+import io.invertase.firebase.database.RNFirebaseDatabasePackage; // Firebase Realtime Database
 
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import fm.indiecast.rnaudiostreamer.RNAudioStreamerPackage;
@@ -43,6 +44,7 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new RNFirebasePackage(),
             new RNFirebaseAuthPackage(),
+			      new RNFirebaseDatabasePackage(),
             new FBSDKPackage(mCallbackManager),
             new RNAudioStreamerPackage(),
             new RNSoundPackage(),
