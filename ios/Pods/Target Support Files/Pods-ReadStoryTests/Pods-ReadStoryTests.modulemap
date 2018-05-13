@@ -1,0 +1,6 @@
+framework module Pods_ReadStoryTests {
+  umbrella header "Pods-ReadStoryTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

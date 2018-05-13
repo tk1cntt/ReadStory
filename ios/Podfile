@@ -3,6 +3,8 @@
 pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
+pod 'Firebase/Core', '~> 4.13.0'
+pod 'Firebase/Auth', '~> 4.13.0'
 
 target 'ReadStory' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -11,19 +13,6 @@ target 'ReadStory' do
   # Pods for ReadStory
 
   target 'ReadStoryTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
-
-target 'ReadStory-tvOS' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for ReadStory-tvOS
-
-  target 'ReadStory-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
