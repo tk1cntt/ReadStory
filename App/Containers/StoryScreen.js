@@ -12,6 +12,8 @@ import {
 
 import firebase from 'react-native-firebase';
 
+import AuthActions from '../Redux/AuthRedux'
+
 // Styles
 import styles from './Styles/StoryScreenStyle'
 
@@ -52,33 +54,35 @@ class StoryScreen extends Component {
   }
 
   onLoginOrRegisterFB = () => {
-  LoginManager.logInWithReadPermissions(['public_profile', 'email'])
-    .then((result) => {
-      if (result.isCancelled) {
-        return Promise.reject(new Error('The user cancelled the request'));
-      }
-      // Retrieve the access token
-      return AccessToken.getCurrentAccessToken();
-    })
-    .then((data) => {
-      // Create a new Firebase credential with the token
-      const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
-      // Login with the credential
-      return firebase.auth().signInAndRetrieveDataWithCredential(credential);
-    })
-    .then((user) => {
-      // If you need to do anything with the user, do it here
-      // The user will be logged in automatically by the
-      // `onAuthStateChanged` listener we set up in App.js earlier
-      console.log(user);
-    })
-    .catch((error) => {
-      const { code, message } = error;
-      // For details of error codes, see the docs
-      // The message contains the default Firebase string
-      // representation of the error
-      console.log(error);
-    });
+    LoginManager.logInWithReadPermissions(['public_profile', 'email'])
+      .then((result) => {
+        if (result.isCancelled) {
+          return Promise.reject(new Error('The user cancelled the request'));
+        }
+        // Retrieve the access token
+        return AccessToken.getCurrentAccessToken();
+      })
+      .then((data) => {
+        this.props.authSuccess(data);
+        // Create a new Firebase credential with the token
+        const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
+        // Login with the credential
+        return firebase.auth().signInAndRetrieveDataWithCredential(credential);
+      })
+      .then((user) => {
+        // If you need to do anything with the user, do it here
+        // The user will be logged in automatically by the
+        // `onAuthStateChanged` listener we set up in App.js earlier
+        console.log(user);
+      })
+      .catch((error) => {
+        const { code, message } = error;
+        // For details of error codes, see the docs
+        // The message contains the default Firebase string
+        // representation of the error
+        console.log(error);
+        this.props.authFailure();
+      });
 }
 
   render () {
@@ -88,6 +92,21 @@ class StoryScreen extends Component {
           onPress={this.onLoginOrRegisterFB}
           title="Sign in with facebook"
           color="#3c50e8"
+        />
+        <LoginButton
+          publishPermissions={["publish_actions"]}
+          onLoginFinished={
+            (error, result) => {
+              if (error) {
+                alert("Login failed with error: " + result.error);
+              } else if (result.isCancelled) {
+                alert("Login was cancelled");
+              } else {
+                this.props.authSuccess(result);
+              }
+            }
+          }
+          onLogoutFinished={() => alert("User logged out")}
         />
         <Text style={styles.welcome}>
           Welcome to the React Native{'\n'}Firebase starter project!
@@ -129,11 +148,14 @@ class StoryScreen extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    auth: state.auth
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    authSuccess: (payload) => dispatch(AuthActions.authSuccess(payload)),
+    authFailure: () => dispatch(AuthActions.authFailure())
   }
 }
 
