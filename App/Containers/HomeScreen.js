@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 // import YourActions from '../Redux/YourRedux'
 import { Icon } from 'native-base';
 
-import { AudioControls } from 'react-native-hue-player';
+import AudioControls from '../Components/AudioControls';
 
 import caykheThumbnail from './cay_khe.jpg';
 import chubetihonThumbnail from './chu_be_ti_hon.jpg';
