@@ -1,19 +1,30 @@
 import React, { Component } from 'react'
 import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native'
 import { NavigationComponent } from 'react-native-material-bottom-navigation'
-import { TabNavigator } from 'react-navigation'
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 // import screen
 import HomeScreen from './HomeScreen'
 import StoryScreen from './StoryScreen'
+import ContentScreen from './ContentScreen'
+import PlayScreen from './PlayScreen'
 import SettingScreen from './SettingScreen'
+
+export const ContentStack = StackNavigator({
+  Content: { screen: ContentScreen },
+  Play: { screen: PlayScreen }
+});
+
+export const SettingsStack = StackNavigator({
+  Settings: { screen: SettingScreen }
+});
 
 const LaunchScreen = TabNavigator(
   {
     HomeTab: { screen: HomeScreen },
-    StoryTab: { screen: StoryScreen },
-    SettingTab: { screen: SettingScreen }
+    StoryTab: { screen: ContentStack },
+    SettingTab: { screen: SettingsStack }
   },
   {
     tabBarComponent: NavigationComponent,

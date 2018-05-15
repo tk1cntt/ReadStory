@@ -11,6 +11,7 @@ import styles from './Styles/SettingScreenStyle'
 class SettingScreen extends Component {
 
   static navigationOptions = {
+    header: null,
     tabBarLabel: 'Setting',
     tabBarIcon: () => <Icon ios='ios-menu' android="md-menu" style={{fontSize: 24, color: 'white'}}/>
   }

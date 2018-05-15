@@ -50,10 +50,10 @@ const playlist = [
   }
 ];
 
-class HomeScreen extends Component {
+class PlayScreen extends Component {
   static navigationOptions = {
     header: null,
-    tabBarLabel: 'Home',
+    tabBarLabel: 'Play',
     tabBarIcon: () => <Icon ios='ios-home' android="md-home" style={{fontSize: 24, color: 'white'}}/>
   }
 
@@ -106,4 +106,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(PlayScreen)

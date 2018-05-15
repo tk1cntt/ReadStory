@@ -102,6 +102,8 @@ class StoryScreen extends Component {
               } else if (result.isCancelled) {
                 alert("Login was cancelled");
               } else {
+                console.log("Login suceess");
+                console.log(result);
                 this.props.authSuccess(result);
               }
             }
