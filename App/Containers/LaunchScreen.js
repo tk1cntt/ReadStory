@@ -7,13 +7,12 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 // import screen
 import HomeScreen from './HomeScreen'
 import StoryScreen from './StoryScreen'
-import ContentScreen from './ContentScreen'
-import PlayScreen from './PlayScreen'
+import StoryDetailScreen from './StoryDetailScreen'
 import SettingScreen from './SettingScreen'
 
 export const ContentStack = StackNavigator({
-  Content: { screen: ContentScreen },
-  Play: { screen: PlayScreen }
+  Content: { screen: StoryScreen },
+  ContentDetail: { screen: StoryDetailScreen }
 });
 
 export const SettingsStack = StackNavigator({

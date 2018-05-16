@@ -985,6 +985,18 @@ assert@^1.1.1:
   dependencies:
     util "0.10.3"
 
+assign-deep@^0.4.5:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/assign-deep/-/assign-deep-0.4.7.tgz#7f66886a0bdae6d652abb1497f6edfc2c7ab14cf"
+  dependencies:
+    assign-symbols "^0.1.1"
+    is-primitive "^2.0.0"
+    kind-of "^5.0.2"
+
+assign-symbols@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-0.1.1.tgz#cb025944ef4ec8a3693f086e9e112c74e3a0fed9"
+
 assign-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
@@ -5804,7 +5816,7 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
-kind-of@^5.0.0:
+kind-of@^5.0.0, kind-of@^5.0.2:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-5.1.0.tgz#729c91e2d857b7a419a1f9aa65685c4c33f5845d"
 
@@ -7886,6 +7898,13 @@ react-modal@^3.3.2:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
+react-native-app-intro@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/react-native-app-intro/-/react-native-app-intro-1.1.5.tgz#34a2d2265b2d654d31bae743c404856c37448692"
+  dependencies:
+    assign-deep "^0.4.5"
+    react-native-swiper "git+https://github.com/FuYaoDe/react-native-swiper.git"
+
 "react-native-audio-streamer@https://github.com/tk1cntt/react-native-audio-streamer/tarball/upgrade-exoplayer":
   version "0.0.11"
   resolved "https://github.com/tk1cntt/react-native-audio-streamer/tarball/upgrade-exoplayer#693d4df4610a1f77fc109a9988d027f8e719e043"
@@ -8008,6 +8027,12 @@ react-native-safe-area-view@^0.7.0:
 react-native-sound@^0.10.9:
   version "0.10.9"
   resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.10.9.tgz#6b00b0f4afd017cde09fbb9d171df1b5d5b851a8"
+
+"react-native-swiper@git+https://github.com/FuYaoDe/react-native-swiper.git":
+  version "1.4.4"
+  resolved "git+https://github.com/FuYaoDe/react-native-swiper.git#a6417ff41a8b2d490bdcc4541015ab35736d4595"
+  dependencies:
+    react-timer-mixin "^0.13.3"
 
 "react-native-tab-view@github:react-navigation/react-native-tab-view":
   version "0.0.74"
@@ -8173,7 +8198,7 @@ react-test-renderer@^16.0.0-0:
     prop-types "^15.6.0"
     react-is "^16.3.2"
 
-react-timer-mixin@^0.13.2:
+react-timer-mixin@^0.13.2, react-timer-mixin@^0.13.3:
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.3.tgz#0da8b9f807ec07dc3e854d082c737c65605b3d22"
 

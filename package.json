@@ -35,6 +35,7 @@
     "ramda": "^0.25.0",
     "react": "16.3.1",
     "react-native": "0.55.1",
+    "react-native-app-intro": "^1.1.5",
     "react-native-audio-streamer": "https://github.com/tk1cntt/react-native-audio-streamer/tarball/upgrade-exoplayer",
     "react-native-config": "^0.10.0",
     "react-native-fbsdk": "^0.7.0",

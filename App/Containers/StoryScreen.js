@@ -1,163 +1,132 @@
 import React, { Component } from 'react'
-import { Platform, ScrollView, Button, Text, KeyboardAvoidingView, View } from 'react-native'
+import { View, ListView } from 'react-native'
 import { connect } from 'react-redux'
-// Add Actions - replace 'Your' with whatever your reducer is called :)
-// import YourActions from '../Redux/YourRedux'
-import { Icon } from 'native-base';
-import {
-  LoginButton,
-  LoginManager,
-  AccessToken
-} from 'react-native-fbsdk';
+import { Container, Header, Left, Body, Right, Content, Title, List, ListItem, Thumbnail, Icon, Text, Button } from 'native-base';
 
-import firebase from 'react-native-firebase';
+// For empty lists
+// import AlertMessage from '../Components/AlertMessage'
 
-import AuthActions from '../Redux/AuthRedux'
+import artwork from './thumbnail.jpg'
+import caykheThumbnail from './cay_khe.jpg';
+import chubetihonThumbnail from './chu_be_ti_hon.jpg';
+import soduaThumbnail from './so_dua.jpg';
+import sutichtraucauThumbnail from './su_tich_trau_cau.jpg';
 
 // Styles
-import styles from './Styles/StoryScreenStyle'
+import styles from './Styles/ContentScreenStyle'
 
 class StoryScreen extends Component {
   static navigationOptions = {
+    header: null,
     tabBarLabel: 'Stories',
     tabBarIcon: () => <Icon ios='ios-book' android="md-book" style={{fontSize: 24, color: 'white'}}/>
   }
 
-  constructor() {
-    super();
-    this.state = {
-      loading: true,
-    };
-  }
-
-  /**
-   * When the App component mounts, we listen for any authentication
-   * state changes in Firebase.
-   * Once subscribed, the 'user' parameter will either be null
-   * (logged out) or an Object (logged in)
-   */
-  componentDidMount() {
-    this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
-      this.setState({
-        loading: false,
-        user,
-      });
-    });
-  }
-
-  /**
-   * Don't forget to stop listening for authentication state changes
-   * when the component unmounts.
-   */
-  componentWillUnmount() {
-    this.authSubscription();
-  }
-
-  onLoginOrRegisterFB = () => {
-    LoginManager.logInWithReadPermissions(['public_profile', 'email'])
-      .then((result) => {
-        if (result.isCancelled) {
-          return Promise.reject(new Error('The user cancelled the request'));
-        }
-        // Retrieve the access token
-        return AccessToken.getCurrentAccessToken();
-      })
-      .then((data) => {
-        this.props.authSuccess(data);
-        // Create a new Firebase credential with the token
-        const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
-        // Login with the credential
-        return firebase.auth().signInAndRetrieveDataWithCredential(credential);
-      })
-      .then((user) => {
-        // If you need to do anything with the user, do it here
-        // The user will be logged in automatically by the
-        // `onAuthStateChanged` listener we set up in App.js earlier
-        console.log(user);
-      })
-      .catch((error) => {
-        const { code, message } = error;
-        // For details of error codes, see the docs
-        // The message contains the default Firebase string
-        // representation of the error
-        console.log(error);
-        this.props.authFailure();
-      });
-}
-
-  render () {
+  render() {
     return (
-      <ScrollView style={styles.container}>
-        <Button
-          onPress={this.onLoginOrRegisterFB}
-          title="Sign in with facebook"
-          color="#3c50e8"
-        />
-        <LoginButton
-          publishPermissions={["publish_actions"]}
-          onLoginFinished={
-            (error, result) => {
-              if (error) {
-                alert("Login failed with error: " + result.error);
-              } else if (result.isCancelled) {
-                alert("Login was cancelled");
-              } else {
-                console.log("Login suceess");
-                console.log(result);
-                this.props.authSuccess(result);
-              }
-            }
-          }
-          onLogoutFinished={() => alert("User logged out")}
-        />
-        <Text style={styles.welcome}>
-          Welcome to the React Native{'\n'}Firebase starter project!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        {Platform.OS === 'ios' ? (
-          <Text style={styles.instructions}>
-            Press Cmd+R to reload,{'\n'}
-            Cmd+D or shake for dev menu
-          </Text>
-        ) : (
-          <Text style={styles.instructions}>
-            Double tap R on your keyboard to reload,{'\n'}
-            Cmd+M or shake for dev menu
-          </Text>
-        )}
-        <View style={styles.modules}>
-          <Text style={styles.modulesHeader}>The following Firebase modules are enabled:</Text>
-          {firebase.admob.nativeModuleExists && <Text style={styles.module}>Admob</Text>}
-          {firebase.analytics.nativeModuleExists && <Text style={styles.module}>Analytics</Text>}
-          {firebase.auth.nativeModuleExists && <Text style={styles.module}>Authentication</Text>}
-          {firebase.crashlytics.nativeModuleExists && <Text style={styles.module}>Crashlytics</Text>}
-          {firebase.firestore.nativeModuleExists && <Text style={styles.module}>Cloud Firestore</Text>}
-          {firebase.messaging.nativeModuleExists && <Text style={styles.module}>Cloud Messaging</Text>}
-          {firebase.links.nativeModuleExists && <Text style={styles.module}>Dynamic Links</Text>}
-          {firebase.iid.nativeModuleExists && <Text style={styles.module}>Instance ID</Text>}
-          {firebase.notifications.nativeModuleExists && <Text style={styles.module}>Notifications</Text>}
-          {firebase.perf.nativeModuleExists && <Text style={styles.module}>Performance Monitoring</Text>}
-          {firebase.database.nativeModuleExists && <Text style={styles.module}>Realtime Database</Text>}
-          {firebase.config.nativeModuleExists && <Text style={styles.module}>Remote Config</Text>}
-          {firebase.storage.nativeModuleExists && <Text style={styles.module}>Storage</Text>}
-        </View>
-      </ScrollView>
+      <Container>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name='arrow-back' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Stories</Title>
+          </Body>
+          <Right>
+            <Button transparent>
+              <Icon name='menu' />
+            </Button>
+          </Right>
+        </Header>
+        <Content>
+          <List>
+            <ListItem>
+              <Thumbnail square size={80} source={artwork} />
+              <Body>
+                <Text>Truyen 18+</Text>
+                <Text note>Truyen nguoi lon</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={caykheThumbnail} />
+              <Body>
+                <Text>Cay khe</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={chubetihonThumbnail} />
+              <Body>
+                <Text>Chu be ti hon</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={soduaThumbnail} />
+              <Body>
+                <Text>So dua</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={sutichtraucauThumbnail} />
+              <Body>
+                <Text>Su tich trau cau</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={artwork} />
+              <Body>
+                <Text>Truyen 18+</Text>
+                <Text note>Truyen nguoi lon</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={caykheThumbnail} />
+              <Body>
+                <Text>Cay khe</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={chubetihonThumbnail} />
+              <Body>
+                <Text>Chu be ti hon</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={soduaThumbnail} />
+              <Body>
+                <Text>So dua</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+            </ListItem>
+            <ListItem>
+              <Thumbnail square size={80} source={sutichtraucauThumbnail} />
+              <Body>
+                <Text>Su tich trau cau</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+            </ListItem>
+          </List>
+        </Content>
+      </Container>
     );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.auth
+    // ...redux state to props here
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    authSuccess: (payload) => dispatch(AuthActions.authSuccess(payload)),
-    authFailure: () => dispatch(AuthActions.authFailure())
   }
 }
 
