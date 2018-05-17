@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Separator } from 'native-base';
-
-// More info here: https://facebook.github.io/react-native/docs/flatlist.html
-import MenuItem from '../Components/MenuItem'
+import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch } from 'native-base';
 
 // Styles
 import styles from './Styles/SettingScreenStyle'
@@ -19,59 +16,42 @@ class SettingScreen extends Component {
   render() {
     return (
       <Container>
-        <Header />
         <Content>
           <List>
-            <ListItem itemDivider>
-              <Text>Menu</Text>
+            <ListItem icon>
+              <Left>
+                <Icon name="plane" />
+              </Left>
+              <Body>
+                <Text>Airplane Mode</Text>
+              </Body>
+              <Right>
+                <Switch value={false} />
+              </Right>
             </ListItem>
             <ListItem icon>
               <Left>
-                <Icon name="home" />
+                <Icon name="wifi" />
               </Left>
               <Body>
-                <Text>Home</Text>
+                <Text>Wi-Fi</Text>
               </Body>
+              <Right>
+                <Text>GeekyAnts</Text>
+                <Icon name="arrow-forward" />
+              </Right>
             </ListItem>
             <ListItem icon>
               <Left>
-                <Icon name="book" />
+                <Icon name="bluetooth" />
               </Left>
               <Body>
-                <Text>Stories</Text>
+                <Text>Bluetooth</Text>
               </Body>
-            </ListItem>
-            <ListItem icon>
-             <Left>
-               <Icon name="calendar" />
-             </Left>
-             <Body>
-               <Text>History</Text>
-             </Body>
-           </ListItem>
-           <ListItem icon>
-             <Left>
-               <Icon name="card" />
-             </Left>
-             <Body>
-               <Text>Account</Text>
-             </Body>
-           </ListItem>
-            <ListItem icon>
-              <Left>
-                <Icon name="contacts" />
-              </Left>
-              <Body>
-                <Text>Friends</Text>
-              </Body>
-            </ListItem>
-            <ListItem itemDivider>
-              <Text>Terms of service</Text>
-            </ListItem>
-            <ListItem icon>
-              <Body>
-                <Text>Terms and Policies</Text>
-              </Body>
+              <Right>
+                <Text>On</Text>
+                <Icon name="arrow-forward" />
+              </Right>
             </ListItem>
           </List>
         </Content>

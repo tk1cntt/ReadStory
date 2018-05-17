@@ -27,7 +27,7 @@ const LaunchScreen = TabNavigator(
   },
   {
     tabBarComponent: NavigationComponent,
-    tabBarPosition: 'bottom',
+    tabBarPosition: 'top',
     initialRouteName: 'HomeTab',
     tabBarOptions: {
       bottomNavigationOptions: {

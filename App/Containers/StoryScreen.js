@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { View, ListView } from 'react-native'
 import { connect } from 'react-redux'
-import { Container, Header, Left, Body, Right, Content, Title, List, ListItem, Thumbnail, Icon, Text, Button } from 'native-base';
+import { Container, Header, Footer, Left, Body, Right, Content, Title, List, ListItem, Thumbnail, Icon, Text, Button, Card, CardItem } from 'native-base';
 
 // For empty lists
 // import AlertMessage from '../Components/AlertMessage'
@@ -25,21 +24,6 @@ class StoryScreen extends Component {
   render() {
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='arrow-back' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Stories</Title>
-          </Body>
-          <Right>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Right>
-        </Header>
         <Content>
           <List>
             <ListItem>
@@ -114,6 +98,26 @@ class StoryScreen extends Component {
             </ListItem>
           </List>
         </Content>
+        <Footer>
+          <Body>
+            <CardItem>
+              <Thumbnail square size={80} source={artwork} />
+              <Body>
+                <Text>Su tich trau cau</Text>
+                <Text note>Truyen co tich</Text>
+              </Body>
+              <Button transparent>
+                <Icon name="skip-backward" style={{fontSize: 20, color: 'blue'}}/>
+              </Button>
+              <Button transparent>
+                <Icon name="play" style={{fontSize: 20, color: 'blue'}}/>
+              </Button>
+              <Button transparent>
+                <Icon name="skip-forward" style={{fontSize: 20, color: 'blue'}}/>
+              </Button>
+             </CardItem>
+          </Body>
+        </Footer>
       </Container>
     );
   }
