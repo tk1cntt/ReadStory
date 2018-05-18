@@ -94,9 +94,7 @@ class HomeScreen extends Component {
     return (
       <Container>
         <Content>
-          <Grid>
-            <Col style={{ backgroundColor: '#635DB7', height: 200 }}>
-			          <Card>
+          <Card>
             <CardItem>
               <Left>
                 <Thumbnail source={artwork} />
@@ -115,13 +113,11 @@ class HomeScreen extends Component {
                   <Icon active name="thumbs-up" />
                   <Text>12</Text>
                 </Button>
-              </Left>
-              <Body>
                 <Button transparent>
                   <Icon active name="chatbubbles" />
                   <Text>4 đánh giá</Text>
                 </Button>
-              </Body>
+              </Left>
               <Right>
                 <Text>11h ago</Text>
               </Right>
@@ -143,16 +139,14 @@ class HomeScreen extends Component {
             <CardItem>
               <Left>
                 <Button transparent>
-                  <Icon active name="thumbs-up" />
+                  <Icon name="thumbs-up" />
                   <Text>12</Text>
                 </Button>
-              </Left>
-              <Body>
                 <Button transparent>
-                  <Icon active name="chatbubbles" />
+                  <Icon name="chatbubbles" />
                   <Text>4 bình luận</Text>
                 </Button>
-              </Body>
+              </Left>
               <Right>
                 <Text>11h ago</Text>
               </Right>
@@ -174,119 +168,19 @@ class HomeScreen extends Component {
             <CardItem>
               <Left>
                 <Button transparent>
-                  <Icon active name="thumbs-up" />
+                  <Icon name="thumbs-up" />
                   <Text>12</Text>
                 </Button>
-              </Left>
-              <Body>
                 <Button transparent>
-                  <Icon active name="chatbubbles" />
-                  <Text>4</Text>
+                  <Icon name="chatbubbles" />
+                  <Text>4 Comments</Text>
                 </Button>
-              </Body>
+              </Left>
               <Right>
                 <Text>11h ago</Text>
               </Right>
             </CardItem>
           </Card>
-			</Col>
-            <Col style={{ backgroundColor: '#00CE9F', height: 200 }}>
-			          <Card>
-            <CardItem>
-              <Left>
-                <Thumbnail source={artwork} />
-                <Body>
-                  <Text>Truyện 18+</Text>
-                  <Text note>Truyện người lớn</Text>
-                </Body>
-              </Left>
-            </CardItem>
-            <CardItem cardBody>
-              <Image source={artwork} style={{height: 200, width: null, flex: 1}}/>
-            </CardItem>
-            <CardItem>
-              <Left>
-                <Button transparent>
-                  <Icon active name="thumbs-up" />
-                  <Text>12</Text>
-                </Button>
-              </Left>
-              <Body>
-                <Button transparent>
-                  <Icon active name="chatbubbles" />
-                  <Text>4 đánh giá</Text>
-                </Button>
-              </Body>
-              <Right>
-                <Text>11h ago</Text>
-              </Right>
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-              <Left>
-                <Thumbnail source={caykheThumbnail} />
-                <Body>
-                  <Text>Cây khế</Text>
-                  <Text note>Truyện cổ tích</Text>
-                </Body>
-              </Left>
-            </CardItem>
-            <CardItem cardBody>
-              <Image source={caykheThumbnail} style={{height: 200, width: null, flex: 1}}/>
-            </CardItem>
-            <CardItem>
-              <Left>
-                <Button transparent>
-                  <Icon active name="thumbs-up" />
-                  <Text>12</Text>
-                </Button>
-              </Left>
-              <Body>
-                <Button transparent>
-                  <Icon active name="chatbubbles" />
-                  <Text>4 bình luận</Text>
-                </Button>
-              </Body>
-              <Right>
-                <Text>11h ago</Text>
-              </Right>
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-              <Left>
-                <Thumbnail source={chubetihonThumbnail} />
-                <Body>
-                  <Text>Chú bé tý hon</Text>
-                  <Text note>Truyện cổ tích</Text>
-                </Body>
-              </Left>
-            </CardItem>
-            <CardItem cardBody>
-              <Image source={chubetihonThumbnail} style={{height: 200, width: null, flex: 1}}/>
-            </CardItem>
-            <CardItem>
-              <Left>
-                <Button transparent>
-                  <Icon active name="thumbs-up" />
-                  <Text>12</Text>
-                </Button>
-              </Left>
-              <Body>
-                <Button transparent>
-                  <Icon active name="chatbubbles" />
-                  <Text>4</Text>
-                </Button>
-              </Body>
-              <Right>
-                <Text>11h ago</Text>
-              </Right>
-            </CardItem>
-          </Card>
-			</Col>
-          </Grid>
-
         </Content>
       </Container>
     );
