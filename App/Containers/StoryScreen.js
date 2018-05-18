@@ -26,6 +26,9 @@ class StoryScreen extends Component {
       <Container>
         <Content>
           <List>
+            <ListItem itemDivider>
+              <Text>Most viewed</Text>
+            </ListItem>
             <ListItem>
               <Thumbnail square size={80} source={artwork} />
               <Body>
@@ -39,6 +42,9 @@ class StoryScreen extends Component {
                 <Text>Cay khe</Text>
                 <Text note>Truyen co tich</Text>
               </Body>
+            </ListItem>
+            <ListItem itemDivider>
+              <Text>Chuyen tre em</Text>
             </ListItem>
             <ListItem>
               <Thumbnail square size={80} source={chubetihonThumbnail} />
@@ -60,6 +66,9 @@ class StoryScreen extends Component {
                 <Text>Su tich trau cau</Text>
                 <Text note>Truyen co tich</Text>
               </Body>
+            </ListItem>
+            <ListItem itemDivider>
+              <Text>Truyen nguoi lon</Text>
             </ListItem>
             <ListItem>
               <Thumbnail square size={80} source={artwork} />

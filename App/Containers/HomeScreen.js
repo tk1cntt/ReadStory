@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Platform, ScrollView, Button, Text, KeyboardAvoidingView, View } from 'react-native'
+import { Image } from 'react-native';
 import { connect } from 'react-redux'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
-import { Icon } from 'native-base';
+import { Container, Header, Footer, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+
 import {
   LoginButton,
   LoginManager,
@@ -16,6 +17,10 @@ import AuthActions from '../Redux/AuthRedux'
 
 // Styles
 import styles from './Styles/StoryScreenStyle'
+
+import artwork from './thumbnail.jpg'
+import caykheThumbnail from './cay_khe.jpg';
+import chubetihonThumbnail from './chu_be_ti_hon.jpg';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -87,63 +92,203 @@ class HomeScreen extends Component {
 
   render () {
     return (
-      <ScrollView style={styles.container}>
-        <Button
-          onPress={this.onLoginOrRegisterFB}
-          title="Sign in with facebook"
-          color="#3c50e8"
-        />
-        <LoginButton
-          publishPermissions={["publish_actions"]}
-          onLoginFinished={
-            (error, result) => {
-              if (error) {
-                alert("Login failed with error: " + result.error);
-              } else if (result.isCancelled) {
-                alert("Login was cancelled");
-              } else {
-                console.log("Login suceess");
-                console.log(result);
-                this.props.authSuccess(result);
-              }
-            }
-          }
-          onLogoutFinished={() => alert("User logged out")}
-        />
-        <Text style={styles.welcome}>
-          Welcome to the React Native{'\n'}Firebase starter project!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        {Platform.OS === 'ios' ? (
-          <Text style={styles.instructions}>
-            Press Cmd+R to reload,{'\n'}
-            Cmd+D or shake for dev menu
-          </Text>
-        ) : (
-          <Text style={styles.instructions}>
-            Double tap R on your keyboard to reload,{'\n'}
-            Cmd+M or shake for dev menu
-          </Text>
-        )}
-        <View style={styles.modules}>
-          <Text style={styles.modulesHeader}>The following Firebase modules are enabled:</Text>
-          {firebase.admob.nativeModuleExists && <Text style={styles.module}>Admob</Text>}
-          {firebase.analytics.nativeModuleExists && <Text style={styles.module}>Analytics</Text>}
-          {firebase.auth.nativeModuleExists && <Text style={styles.module}>Authentication</Text>}
-          {firebase.crashlytics.nativeModuleExists && <Text style={styles.module}>Crashlytics</Text>}
-          {firebase.firestore.nativeModuleExists && <Text style={styles.module}>Cloud Firestore</Text>}
-          {firebase.messaging.nativeModuleExists && <Text style={styles.module}>Cloud Messaging</Text>}
-          {firebase.links.nativeModuleExists && <Text style={styles.module}>Dynamic Links</Text>}
-          {firebase.iid.nativeModuleExists && <Text style={styles.module}>Instance ID</Text>}
-          {firebase.notifications.nativeModuleExists && <Text style={styles.module}>Notifications</Text>}
-          {firebase.perf.nativeModuleExists && <Text style={styles.module}>Performance Monitoring</Text>}
-          {firebase.database.nativeModuleExists && <Text style={styles.module}>Realtime Database</Text>}
-          {firebase.config.nativeModuleExists && <Text style={styles.module}>Remote Config</Text>}
-          {firebase.storage.nativeModuleExists && <Text style={styles.module}>Storage</Text>}
-        </View>
-      </ScrollView>
+      <Container>
+        <Content>
+          <Grid>
+            <Col style={{ backgroundColor: '#635DB7', height: 200 }}>
+			          <Card>
+            <CardItem>
+              <Left>
+                <Thumbnail source={artwork} />
+                <Body>
+                  <Text>Truyện 18+</Text>
+                  <Text note>Truyện người lớn</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem cardBody>
+              <Image source={artwork} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>12</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>4 đánh giá</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+            </CardItem>
+          </Card>
+          <Card>
+            <CardItem>
+              <Left>
+                <Thumbnail source={caykheThumbnail} />
+                <Body>
+                  <Text>Cây khế</Text>
+                  <Text note>Truyện cổ tích</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem cardBody>
+              <Image source={caykheThumbnail} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>12</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>4 bình luận</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+            </CardItem>
+          </Card>
+          <Card>
+            <CardItem>
+              <Left>
+                <Thumbnail source={chubetihonThumbnail} />
+                <Body>
+                  <Text>Chú bé tý hon</Text>
+                  <Text note>Truyện cổ tích</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem cardBody>
+              <Image source={chubetihonThumbnail} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>12</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>4</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+            </CardItem>
+          </Card>
+			</Col>
+            <Col style={{ backgroundColor: '#00CE9F', height: 200 }}>
+			          <Card>
+            <CardItem>
+              <Left>
+                <Thumbnail source={artwork} />
+                <Body>
+                  <Text>Truyện 18+</Text>
+                  <Text note>Truyện người lớn</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem cardBody>
+              <Image source={artwork} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>12</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>4 đánh giá</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+            </CardItem>
+          </Card>
+          <Card>
+            <CardItem>
+              <Left>
+                <Thumbnail source={caykheThumbnail} />
+                <Body>
+                  <Text>Cây khế</Text>
+                  <Text note>Truyện cổ tích</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem cardBody>
+              <Image source={caykheThumbnail} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>12</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>4 bình luận</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+            </CardItem>
+          </Card>
+          <Card>
+            <CardItem>
+              <Left>
+                <Thumbnail source={chubetihonThumbnail} />
+                <Body>
+                  <Text>Chú bé tý hon</Text>
+                  <Text note>Truyện cổ tích</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem cardBody>
+              <Image source={chubetihonThumbnail} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>12</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>4</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+            </CardItem>
+          </Card>
+			</Col>
+          </Grid>
+
+        </Content>
+      </Container>
     );
   }
 }

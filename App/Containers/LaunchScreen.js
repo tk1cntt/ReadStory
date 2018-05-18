@@ -22,11 +22,10 @@ export const SettingsStack = StackNavigator({
 const LaunchScreen = TabNavigator(
   {
     HomeTab: { screen: HomeScreen },
-    StoryTab: { screen: ContentStack },
+    StoryTab: { screen: StoryScreen },
     SettingTab: { screen: SettingsStack }
   },
   {
-    tabBarComponent: NavigationComponent,
     tabBarPosition: 'top',
     initialRouteName: 'HomeTab',
     tabBarOptions: {
