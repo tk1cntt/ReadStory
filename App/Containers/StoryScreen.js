@@ -116,13 +116,13 @@ class StoryScreen extends Component {
                 <Text note>Truyen co tich</Text>
               </Body>
               <Button transparent>
-                <Icon name="skip-backward" style={{fontSize: 20, color: 'blue'}}/>
+                <Icon type="MaterialIcons" name="skip-previous" style={{fontSize: 20, color: 'blue'}}/>
               </Button>
               <Button transparent>
-                <Icon name="play" style={{fontSize: 20, color: 'blue'}}/>
+                <Icon type="MaterialIcons" name="play-arrow" style={{fontSize: 20, color: 'blue'}}/>
               </Button>
               <Button transparent>
-                <Icon name="skip-forward" style={{fontSize: 20, color: 'blue'}}/>
+                <Icon type="MaterialIcons" name="skip-next" style={{fontSize: 20, color: 'blue'}}/>
               </Button>
              </CardItem>
           </Body>

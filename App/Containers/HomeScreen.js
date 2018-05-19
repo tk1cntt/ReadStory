@@ -115,7 +115,7 @@ class HomeScreen extends Component {
                 </Button>
                 <Button transparent>
                   <Icon active name="chatbubbles" />
-                  <Text>4 đánh giá</Text>
+                  <Text>4</Text>
                 </Button>
               </Left>
               <Right>
@@ -144,7 +144,7 @@ class HomeScreen extends Component {
                 </Button>
                 <Button transparent>
                   <Icon name="chatbubbles" />
-                  <Text>4 bình luận</Text>
+                  <Text>4</Text>
                 </Button>
               </Left>
               <Right>
@@ -173,7 +173,7 @@ class HomeScreen extends Component {
                 </Button>
                 <Button transparent>
                   <Icon name="chatbubbles" />
-                  <Text>4 Comments</Text>
+                  <Text>4</Text>
                 </Button>
               </Left>
               <Right>
