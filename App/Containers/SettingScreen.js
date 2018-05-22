@@ -6,7 +6,7 @@ import { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Rig
 import styles from './Styles/SettingScreenStyle'
 
 import ProfileScreen from './ProfileScreen'
-import LoginSceen from './LoginSceen'
+import LoginScreen from './LoginScreen'
 
 class SettingScreen extends Component {
 

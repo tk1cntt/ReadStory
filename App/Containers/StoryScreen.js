@@ -12,7 +12,7 @@ import soduaThumbnail from './so_dua.jpg';
 import sutichtraucauThumbnail from './su_tich_trau_cau.jpg';
 
 // Styles
-import styles from './Styles/ContentScreenStyle'
+import styles from './Styles/StoryScreenStyle'
 
 class StoryScreen extends Component {
   static navigationOptions = {

@@ -22,7 +22,7 @@ export const SettingsStack = StackNavigator({
 const LaunchScreen = TabNavigator(
   {
     HomeTab: { screen: HomeScreen },
-    StoryTab: { screen: StoryScreen },
+    StoryTab: { screen: StoryDetailScreen },
     SettingTab: { screen: SettingsStack }
   },
   {

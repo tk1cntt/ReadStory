@@ -8,12 +8,15 @@ import {
     Text,
     Dimensions
 } from 'react-native';
+import { connect } from 'react-redux'
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/vi';
 
 import images from '../config/images';
 import colors from '../config/colors';
 import AudioController from '../AudioController';
+
+import AudioActions from '../../Redux/AudioRedux'
 
 const { width } = Dimensions.get('window');
 
@@ -72,7 +75,7 @@ class AudioControls extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         const { playlist, initialTrack } = this.props;
         AudioController.init(playlist, initialTrack, this.onChangeStatus, this.updateCurrentTime);
     }
@@ -81,18 +84,23 @@ class AudioControls extends Component {
         switch (status) {
             case AudioController.status.PLAYING:
                 this.setState({ isPlaying: true });
+                this.props.audioSuccess(this.state);
                 break;
             case AudioController.status.PAUSED:
                 this.setState({ isPlaying: false });
+                this.props.audioSuccess(this.state);
                 break;
             case AudioController.status.STOPPED:
                 this.setState({ isPlaying: false });
+                this.props.audioSuccess(this.state);
                 break;
             case AudioController.status.LOADED:
                 AudioController.getDuration((seconds) => {
                     this.setState({ duration: seconds });
+                    this.props.audioSuccess(this.state);
                 });
                 this.setState({ currentAudio: AudioController.currentAudio });
+                this.props.audioSuccess(this.state);
                 break;
             case AudioController.status.ERROR:
                 console.log('Status Error');
@@ -310,4 +318,10 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AudioControls;
+// wraps dispatch to create nicer functions to call within our component
+const mapDispatchToProps = (dispatch) => ({
+  audioSuccess: (payload) => dispatch(AudioActions.audioSuccess(payload)),
+  audioFailure: () => dispatch(AudioActions.audioFailure())
+})
+
+export default connect(null, mapDispatchToProps)(AudioControls)

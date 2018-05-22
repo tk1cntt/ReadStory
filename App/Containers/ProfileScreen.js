@@ -12,15 +12,12 @@ import artwork from './thumbnail.jpg'
 class ProfileScreen extends Component {
   render() {
     return (
-      <Container>
+      <Container style={[styles.container]}>
         <Content>
-          <View style={[styles.header, styles.bordered]}>
+          <View style={[styles.header]}>
             <Thumbnail large source={artwork} />
           </View>
           <Card>
-            <CardItem>
-              <Body></Body>
-            </CardItem>
             <CardItem>
               <Body>
                 <Text>Sylvia</Text>
@@ -35,6 +32,9 @@ class ProfileScreen extends Component {
 }
 
 let styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF",
+  },
   header: {
     alignItems: 'center',
     paddingTop: 25,
