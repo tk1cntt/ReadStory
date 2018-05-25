@@ -45,6 +45,7 @@
     "react-native-google-signin": "^0.12.0",
     "react-native-material-bottom-navigation": "^0.9.0",
     "react-native-music-control": "https://github.com/tk1cntt/react-native-music-control/tarball/master",
+    "react-native-track-player": "https://github.com/tk1cntt/react-native-track-player/tarball/dev",
     "react-native-progress": "^3.4.0",
     "react-native-root-toast": "^3.0.1",
     "react-native-sound": "^0.10.9",

@@ -5,6 +5,16 @@ import android.app.Application;
 import com.facebook.CallbackManager;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.zmxv.RNSound.RNSoundPackage;
+import guichaguri.trackplayer.TrackPlayer;
+import com.tanguyantoine.react.MusicControl;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
+import fm.indiecast.rnaudiostreamer.RNAudioStreamerPackage;
 
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage; // Firebase Auth
@@ -42,9 +52,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new TrackPlayer(),
+            new RNGoogleSigninPackage(),
             new RNFirebasePackage(),
             new RNFirebaseAuthPackage(),
-			new RNFirebaseDatabasePackage(),
+			      new RNFirebaseDatabasePackage(),
             new FBSDKPackage(mCallbackManager),
             new RNAudioStreamerPackage(),
             new RNSoundPackage(),
