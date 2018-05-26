@@ -12,6 +12,8 @@ target 'ReadStory' do
 
   # Pods for ReadStory
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   target 'ReadStoryTests' do
     inherit! :search_paths
     # Pods for testing

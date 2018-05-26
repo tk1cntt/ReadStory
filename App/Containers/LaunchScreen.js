@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 // import screen
 import HomeScreen from './HomeScreen'
 import StoryScreen from './StoryScreen'
-import StoryDetailScreen from './StoryDetailScreen'
+import StoryDetailScreen from './TrendingScreen'
 import SettingScreen from './SettingScreen'
 
 export const ContentStack = StackNavigator({
@@ -26,7 +26,7 @@ const LaunchScreen = TabNavigator(
     SettingTab: { screen: SettingsStack }
   },
   {
-    tabBarPosition: 'top',
+    tabBarPosition: 'bottom',
     initialRouteName: 'HomeTab',
     tabBarOptions: {
       bottomNavigationOptions: {
