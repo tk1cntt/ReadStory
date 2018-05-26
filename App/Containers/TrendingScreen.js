@@ -264,7 +264,7 @@ class TrendingScreen extends Component {
   }
 }
 
-export default Trending;
+export default TrendingScreen;
 
 const styles = StyleSheet.create({
   container: {
