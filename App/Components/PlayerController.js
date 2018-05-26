@@ -115,7 +115,7 @@ ControlButton.propTypes = {
   onPress: PropTypes.func.isRequired,
 };
 
-export default class PlayerControll extends Component {
+export default class PlayerController extends Component {
 
   constructor(props) {
     super(props)
@@ -127,19 +127,6 @@ export default class PlayerControll extends Component {
       library: false
     }
   }
-
-  componentWillMount() {
-    AsyncStorage.getItem('playlists', (err, res) => {
-      if (res) {
-        this.setState({
-          playlistNames: Object.keys(JSON.parse(res))
-        })
-      }
-    })
-    //
-  }
-
-
 
   // initializeLibrary = async() => {
   //   let value = ifInLibrary(this.props.track.id)
@@ -223,18 +210,6 @@ export default class PlayerControll extends Component {
       path = require('../Images/library-active.png')
     return (
       <View style={styles.controller}>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={this.state.showQueue}
-          onRequestClose={() => this.toggleQueueModal()}
-        >
-          <TrackQueue
-            trackList={this.props.trackList}
-            handleQueue={this.chooseTrackFromQueue}
-            closeModal={this.toggleQueueModal}
-          />
-        </Modal>
         <Text style={styles.songTitle}>{track.title}</Text>
         <Text style={styles.songArtist}>{track.artist}</Text>
 
@@ -246,8 +221,6 @@ export default class PlayerControll extends Component {
             <Image source={require('../Images/elipsis.png')} style={styles.skipTrack} />
           </TouchableOpacity>
         </View>
-        <ProgressBar />
-        <Duration playbackState={playbackState} />
         <View style={styles.controls}>
           <TouchableOpacity style={styles.sideSectionLeft} onPress={() => shuffleTracks()}>
             <Image source={require('../Images/shuffle-white.png')} style={styles.skipTrack} />

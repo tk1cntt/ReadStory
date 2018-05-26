@@ -10,7 +10,7 @@ import LinearGradient from 'react-native-linear-gradient';
 // import { closeApp } from '../../common/helpers'
 let { height, width } = Dimensions.get('window')
 
-let trackList = require('../Container/data.json');
+let trackList = require('../Containers/data.json');
 
 export default class Player extends Component {
 
@@ -138,9 +138,12 @@ export default class Player extends Component {
     })
 	}
 
+
 	componentDidMount() {
-    fetchFromTrending();
+		this.fetchFromTrending();
+    //*
 		TrackPlayer.setupPlayer();
+		/*
     TrackPlayer.registerEventHandler(async (data) => {
       if (data.type === 'playback-track-changed') {
         if (data.nextTrack) {
@@ -164,7 +167,7 @@ export default class Player extends Component {
       }
     });
     // TrackPlayer.reset()
-    this.togglePlayback()
+    // this.togglePlayback()
 		TrackPlayer.updateOptions({
 			stopWithApp: true,
 			capabilities: [
@@ -174,6 +177,7 @@ export default class Player extends Component {
 				TrackPlayer.CAPABILITY_SKIP_TO_PREVIOUS,
 			]
 		});
+		//*/
 	}
 
 	componentWillUnmount() {
@@ -239,7 +243,7 @@ export default class Player extends Component {
 
 	render() {
 		const { playbackState, track, trackList } = this.state
-		console.log('first', (playbackState === TrackPlayer.STATE_BUFFERING || playbackState === TrackPlayer.STATE_NONE || playbackState === TrackPlayer.STATE_STOPPED))
+		// console.log('first', (playbackState === TrackPlayer.STATE_BUFFERING || playbackState === TrackPlayer.STATE_NONE || playbackState === TrackPlayer.STATE_STOPPED))
 		return (
 			<View style={styles.container}>
 				<View style={styles.backgroundContainer}>
