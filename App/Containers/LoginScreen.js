@@ -1,12 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Image, Dimensions, View } from 'react-native';
-import { connect } from 'react-redux'
-import { Container, Content, Button, Thumbnail, Item, Label, Input, Icon, Form, Text } from "native-base";
+import { connect } from 'react-redux';
+import {
+  Container,
+  Content,
+  Button,
+  Thumbnail,
+  Item,
+  Label,
+  Input,
+  Icon,
+  Form,
+  Text,
+} from 'native-base';
 
-import artwork from './thumbnail.jpg'
+import artwork from './thumbnail.jpg';
 
 // Styles
-import styles from './Styles/LoginScreenStyles'
+import styles from './Styles/LoginScreenStyles';
 
 class LoginScreen extends Component {
   render() {
@@ -29,11 +40,19 @@ class LoginScreen extends Component {
           <Button block style={{ margin: 15, marginTop: 30 }}>
             <Text>Sign In</Text>
           </Button>
-          <Button block iconLeft style={{ margin: 15, backgroundColor: "#DD5044" }}>
+          <Button
+            block
+            iconLeft
+            style={{ margin: 15, backgroundColor: '#DD5044' }}
+          >
             <Icon active name="logo-googleplus" />
             <Text> Login with Google Plus</Text>
           </Button>
-          <Button block iconLeft style={{ margin: 15, backgroundColor: "#3B579D" }}>
+          <Button
+            block
+            iconLeft
+            style={{ margin: 15, backgroundColor: '#3B579D' }}
+          >
             <Icon active name="logo-facebook" />
             <Text> Login with Facebook</Text>
           </Button>
@@ -43,15 +62,14 @@ class LoginScreen extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     // ...redux state to props here
-  }
-}
+  };
+};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-  }
-}
+const mapDispatchToProps = dispatch => {
+  return {};
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);

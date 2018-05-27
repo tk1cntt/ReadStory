@@ -1,6 +1,14 @@
-import React, { Component } from 'react'
-import { ScrollView, Text, View, StyleSheet, Switch, Slider, KeyboardAvoidingView } from 'react-native'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import {
+  ScrollView,
+  Text,
+  View,
+  StyleSheet,
+  Switch,
+  Slider,
+  KeyboardAvoidingView,
+} from 'react-native';
+import { connect } from 'react-redux';
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 import { Icon } from 'native-base';
@@ -20,7 +28,7 @@ const playlist = [
     author: 'Chuyen co tich dan gian',
     url: '',
     path: 'cay_khe.mp3',
-    thumbnailLocal: caykheThumbnail
+    thumbnailLocal: caykheThumbnail,
   },
   {
     key: 'audio02',
@@ -28,7 +36,7 @@ const playlist = [
     author: 'Chuyen co tich dan gian',
     url: '',
     path: 'chu_be_ti_hon.mp3',
-    thumbnailLocal: chubetihonThumbnail
+    thumbnailLocal: chubetihonThumbnail,
   },
   {
     key: 'audio03',
@@ -36,7 +44,7 @@ const playlist = [
     author: 'Chuyen co tich dan gian',
     url: '',
     path: 'so_dua.mp3',
-    thumbnailLocal: soduaThumbnail
+    thumbnailLocal: soduaThumbnail,
   },
   {
     key: 'audio04',
@@ -44,16 +52,22 @@ const playlist = [
     author: 'Chuyen co tich dan gian',
     url: '',
     path: 'su_tich_trau_cau.mp3',
-    thumbnailLocal: sutichtraucauThumbnail
-  }
+    thumbnailLocal: sutichtraucauThumbnail,
+  },
 ];
 
 class PlayScreen extends Component {
   static navigationOptions = {
     header: null,
     tabBarLabel: 'Play',
-    tabBarIcon: () => <Icon ios='ios-home' android="md-home" style={{fontSize: 24, color: 'white'}}/>
-  }
+    tabBarIcon: () => (
+      <Icon
+        ios="ios-home"
+        android="md-home"
+        style={{ fontSize: 24, color: 'white' }}
+      />
+    ),
+  };
 
   render() {
     console.log('playlist', playlist);
@@ -85,14 +99,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state) => {
-  return {
-  }
-}
+const mapStateToProps = state => {
+  return {};
+};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-  }
-}
+const mapDispatchToProps = dispatch => {
+  return {};
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(PlayScreen);

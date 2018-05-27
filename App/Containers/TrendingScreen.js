@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Text,
   View,
@@ -11,20 +11,20 @@ import {
   ScrollView,
   ImageBackground,
   Alert,
-  AlertIOS
-} from 'react-native'
+  AlertIOS,
+} from 'react-native';
 
 import { Icon } from 'native-base';
 
 // import { getTrending } from './../../common/helpers'
 // import Footer from '../../common/Footer'
-import { TrackList } from '../Components/TrackList'
+import { TrackList } from '../Components/TrackList';
 // import PopupModal from '../../common/PopupModal'
-import SplashScreen from '../Components/SplashScreen'
+import SplashScreen from '../Components/SplashScreen';
 import LinearGradient from 'react-native-linear-gradient';
 // import { removeFromLibrary, addToLibrary } from './../../common/helpers'
 
-let defaultIcon = require('../Images/default-icon.png')
+let defaultIcon = require('../Images/default-icon.png');
 
 const songs = require('./data.json');
 
@@ -32,10 +32,16 @@ class TrendingScreen extends Component {
   static navigationOptions = {
     header: null,
     tabBarLabel: 'Stories',
-    tabBarIcon: () => <Icon ios='ios-book' android="md-book" style={{fontSize: 24, color: 'white'}}/>
-  }
+    tabBarIcon: () => (
+      <Icon
+        ios="ios-book"
+        android="md-book"
+        style={{ fontSize: 24, color: 'white' }}
+      />
+    ),
+  };
 
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       trendingSongs: [],
@@ -43,18 +49,18 @@ class TrendingScreen extends Component {
       loading: true,
       popupModal: false,
       openPlaylist: false,
-      fetchFailed: []
-    }
+      fetchFailed: [],
+    };
   }
 
   componentDidMount() {
-    this.getSongs()
-    this.randomNumber()
+    this.getSongs();
+    this.randomNumber();
   }
 
-  getSongs(){
-    this.setState({loading: true})
-    this.setState({trendingSongs: songs, loading: false})
+  getSongs() {
+    this.setState({ loading: true });
+    this.setState({ trendingSongs: songs, loading: false });
     /*
     AsyncStorage.getItem('trendingSongs', (err, res) => {
       if(res)
@@ -67,19 +73,19 @@ class TrendingScreen extends Component {
     */
   }
 
-  randomNumber(){
-    let randomArray = []
-    while (randomArray.length < 10){
-        let num = Math.floor(Math.random()*100)
-        if(!randomArray.includes(num)){
-          randomArray.push(num)
-        }
+  randomNumber() {
+    let randomArray = [];
+    while (randomArray.length < 10) {
+      let num = Math.floor(Math.random() * 100);
+      if (!randomArray.includes(num)) {
+        randomArray.push(num);
+      }
     }
-    this.setState({randomArray})
+    this.setState({ randomArray });
   }
 
-  openModal(song){
-    this.setState({popupModal: true, selectedSong: song})
+  openModal(song) {
+    this.setState({ popupModal: true, selectedSong: song });
   }
 
   closeModal = (action, data, operation) => {
@@ -147,9 +153,9 @@ class TrendingScreen extends Component {
       this.setState({popupModal: false, openPlaylist: false})
     }
     */
-  }
+  };
 
-  addToPlaylist = (playlistName) => {
+  addToPlaylist = playlistName => {
     console.log(playlistName);
     /*
     const { songToBeAdded } = this.state
@@ -174,92 +180,116 @@ class TrendingScreen extends Component {
       }
     })
     */
-  }
+  };
 
   createPlaylist = () => {
-    this.setState({addPlaylistModal: true})
-  }
+    this.setState({ addPlaylistModal: true });
+  };
 
   navigateTo = (screen, song) => {
-    this.props.navigation.navigate(screen, {song})
-  }
+    this.props.navigation.navigate(screen, { song });
+  };
 
-  playSong = (index) => {
-    this.props.navigation.navigate('Player', {index, storageKey:'trendingSongs'})
-  }
+  playSong = index => {
+    this.props.navigation.navigate('Player', {
+      index,
+      storageKey: 'trendingSongs',
+    });
+  };
 
-  onError = (id) => {
-    let { fetchFailed } = this.state
-    fetchFailed.push(id)
-    this.setState({fetchFailed})
-  }
+  onError = id => {
+    let { fetchFailed } = this.state;
+    fetchFailed.push(id);
+    this.setState({ fetchFailed });
+  };
 
-  render () {
-    var trending = this.state.trendingSongs
-    var List = <View />
-    var artistView = <View />
+  render() {
+    var trending = this.state.trendingSongs;
+    var List = <View />;
+    var artistView = <View />;
 
-    var randomIndex = this.state.randomArray[0]
-    if(trending.length > 0){
-      List = trending.map((item, index)=> {
+    var randomIndex = this.state.randomArray[0];
+    if (trending.length > 0) {
+      List = trending.map((item, index) => {
         return (
-           <TrackList
-             title={item.title}
-             artist={item.artist}
-             thumbnail={item.thumbnail}
-             song={item}
-             openModal={this.openModal.bind(this)}
-             playSong={this.playSong}
-             index={index}
-             onError={this.onError}
-             fetchFailed={this.state.fetchFailed}
-             key={item.title+index}
+          <TrackList
+            title={item.title}
+            artist={item.artist}
+            thumbnail={item.thumbnail}
+            song={item}
+            openModal={this.openModal.bind(this)}
+            playSong={this.playSong}
+            index={index}
+            onError={this.onError}
+            fetchFailed={this.state.fetchFailed}
+            key={item.title + index}
           />
         );
-      })
-       artistView= trending.map((item, index)=> {
-        if(this.state.randomArray.includes(index)){
-          return(
-            <View key={index} style={styles.trendingView} >
-             <TouchableOpacity style={{height: 110, paddingLeft: 10, paddingTop: 10}} onPress={() => this.props.navigation.navigate('Search', {song: item})}>
-              <Image
-                style={styles.trendingImage}
-                source={item.cover ? {uri: item.cover} : defaultIcon}
-              />
+      });
+      artistView = trending.map((item, index) => {
+        if (this.state.randomArray.includes(index)) {
+          return (
+            <View key={index} style={styles.trendingView}>
+              <TouchableOpacity
+                style={{ height: 110, paddingLeft: 10, paddingTop: 10 }}
+                onPress={() =>
+                  this.props.navigation.navigate('Search', { song: item })
+                }
+              >
+                <Image
+                  style={styles.trendingImage}
+                  source={item.cover ? { uri: item.cover } : defaultIcon}
+                />
               </TouchableOpacity>
-              <View style={{backgroundColor: '#FFFFFF', height: 60, width: 100}}>
-               <Text style={styles.trendingTitle}>{item.artist}</Text>
+              <View
+                style={{ backgroundColor: '#FFFFFF', height: 60, width: 100 }}
+              >
+                <Text style={styles.trendingTitle}>{item.artist}</Text>
               </View>
             </View>
-          )
+          );
         }
-      })
+      });
     }
-    if(this.state.loading){
-      return (
-        <SplashScreen />
-      )
-    }
-    else {
+    if (this.state.loading) {
+      return <SplashScreen />;
+    } else {
       return (
         <View style={styles.container}>
-        <LinearGradient colors={['#7AFFA0', '#62D8FF']} style={{height: 10, width: Dimensions.get('window').width}} />
-         <View style={{height: 220, width: Dimensions.get('window').width, backgroundColor: '#000'}}>
-           <ImageBackground
-              source={{uri: trending[randomIndex] ? trending[randomIndex].cover : require('../Images/default-icon.png')}}
-              style={styles.backgroundImage}>
-            <Text style={styles.trendingArtist}>TRENDING ARTIST</Text>
-             <ScrollView horizontal={true} showsHorizontalScrollIndicator={true} contentContainerStyle={{width: this.state.datesLength*90}} showsHorizontalScrollIndicator={false}>
-              {artistView}
-             </ScrollView>
-           </ImageBackground>
-         </View>
-         <Text style={styles.heading}>TODAY{"'"}S TOP 100 SONGS</Text>
-         <ScrollView>
-          {List}
-         </ScrollView>
+          <LinearGradient
+            colors={['#7AFFA0', '#62D8FF']}
+            style={{ height: 10, width: Dimensions.get('window').width }}
+          />
+          <View
+            style={{
+              height: 220,
+              width: Dimensions.get('window').width,
+              backgroundColor: '#000',
+            }}
+          >
+            <ImageBackground
+              source={{
+                uri: trending[randomIndex]
+                  ? trending[randomIndex].cover
+                  : require('../Images/default-icon.png'),
+              }}
+              style={styles.backgroundImage}
+            >
+              <Text style={styles.trendingArtist}>TRENDING ARTIST</Text>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={true}
+                contentContainerStyle={{ width: this.state.datesLength * 90 }}
+                showsHorizontalScrollIndicator={false}
+              >
+                {artistView}
+              </ScrollView>
+            </ImageBackground>
+          </View>
+          <Text style={styles.heading}>TODAY{"'"}S TOP 100 SONGS</Text>
+          <ScrollView>{List}</ScrollView>
         </View>
-      )
+      );
     }
   }
 }
@@ -278,21 +308,21 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontFamily: 'Proxima-Nova-Bold',
     color: '#4A4A4A',
-    fontSize: 20
+    fontSize: 20,
   },
   trendingTitle: {
     textAlign: 'center',
     fontSize: 14,
-    fontFamily :'Proxima-Nova-Bold',
+    fontFamily: 'Proxima-Nova-Bold',
     color: '#797979',
     paddingTop: 10,
-    opacity: 0.6
+    opacity: 0.6,
   },
   trendingImage: {
     resizeMode: 'contain',
     height: 80,
     width: 80,
-    borderRadius: 80
+    borderRadius: 80,
   },
   trendingView: {
     paddingTop: 15,
@@ -310,5 +340,5 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     height: 50,
     textAlign: 'center',
-  }
+  },
 });

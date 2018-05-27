@@ -1,19 +1,19 @@
-import { StyleSheet } from 'react-native'
-import { Colors, Metrics, ApplicationStyles } from '../../Themes/'
+import { StyleSheet } from 'react-native';
+import { Colors, Metrics, ApplicationStyles } from '../../Themes/';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
-    paddingBottom: Metrics.baseMargin
+    paddingBottom: Metrics.baseMargin,
   },
   logo: {
     marginTop: Metrics.doubleSection,
     height: Metrics.images.logo,
     width: Metrics.images.logo,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   centered: {
-    alignItems: 'center'
+    alignItems: 'center',
   },
   tabBar: {
     height: 54,
@@ -22,16 +22,16 @@ export default StyleSheet.create({
     paddingHorizontal: 28,
     borderTopWidth: 1,
     borderTopColor: 'rgba(255,255,255,0.3)',
-    backgroundColor: Colors.darkPurple
+    backgroundColor: Colors.darkPurple,
   },
   tabBarLabel: {
     fontFamily: 'Montserrat-Medium',
     fontSize: 9,
     letterSpacing: 0,
-    color: Colors.snow
+    color: Colors.snow,
   },
   card: {
     opacity: 1,
-    backgroundColor: Colors.darkPurple
-  }
-})
+    backgroundColor: Colors.darkPurple,
+  },
+});

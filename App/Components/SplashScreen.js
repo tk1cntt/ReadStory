@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Text,
   View,
@@ -8,29 +8,34 @@ import {
   Dimensions,
   Platform,
   StyleSheet,
-  ScrollView
-} from 'react-native'
+  ScrollView,
+} from 'react-native';
 
 export default class SplashScreen extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = {};
   }
 
-  render () {
+  render() {
     return (
       <View style={styles.container}>
-        <Image source={require('../Images/splash.png')} style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}/>
+        <Image
+          source={require('../Images/splash.png')}
+          style={{
+            width: Dimensions.get('window').width,
+            height: Dimensions.get('window').height,
+          }}
+        />
       </View>
-    )
+    );
   }
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height:undefined,
+    height: undefined,
     width: undefined,
     backgroundColor: '#FFFFFF',
-  }
+  },
 });
