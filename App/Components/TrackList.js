@@ -74,14 +74,12 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   titleText: {
-    fontFamily: 'Proxima-Nova-Bold',
     fontSize: 16,
     color: '#252525',
     paddingBottom: 5,
     flexWrap: 'wrap',
   },
   artistText: {
-    fontFamily: 'Proxima-Nova',
     fontSize: 14,
     color: '#252525',
     opacity: 0.5,

@@ -303,26 +303,23 @@ const styles = StyleSheet.create({
   },
   heading: {
     textAlign: 'center',
-    width: '100%',
+    width: Dimensions.get('window').width,
     marginBottom: 10,
     marginTop: 10,
-    fontFamily: 'Proxima-Nova-Bold',
     color: '#4A4A4A',
     fontSize: 20,
   },
   trendingTitle: {
     textAlign: 'center',
     fontSize: 14,
-    fontFamily: 'Proxima-Nova-Bold',
-    color: '#797979',
+    color: '#000',
     paddingTop: 10,
-    opacity: 0.6,
   },
   trendingImage: {
     resizeMode: 'contain',
     height: 80,
     width: 80,
-    borderRadius: 80,
+    borderRadius: Platform.os === 'android' ? 80 : 40,
   },
   trendingView: {
     paddingTop: 15,
@@ -331,10 +328,9 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     width: '100%',
-    height: 220,
+    height: 210,
   },
   trendingArtist: {
-    fontFamily: 'Proxima-Nova-Bold',
     color: '#fff',
     fontSize: 22,
     paddingTop: 15,

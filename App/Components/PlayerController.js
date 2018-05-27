@@ -348,7 +348,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   songTitle: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#FFFFFF',
     textAlign: 'center',
   },
@@ -421,7 +421,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   controls: {
-    marginVertical: 2,
+    marginVertical: 0,
+    marginBottom: 5,
     width: Dimensions.get('window').width * 1,
     flexDirection: 'row',
     alignItems: 'center',

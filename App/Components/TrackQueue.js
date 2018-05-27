@@ -102,13 +102,11 @@ const styles = StyleSheet.create({
   },
   titleText: {
     paddingTop: 5,
-    fontFamily: 'Proxima-Nova-Bold',
     fontSize: 16,
     color: '#FFFFFF',
     paddingBottom: 5,
   },
   artistText: {
-    fontFamily: 'Proxima-Nova',
     fontSize: 12,
     color: '#D8D8D8',
   },
