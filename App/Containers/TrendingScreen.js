@@ -31,7 +31,7 @@ const songs = require('./data.json');
 class TrendingScreen extends Component {
   static navigationOptions = {
     header: null,
-    tabBarLabel: 'Stories',
+    tabBarLabel: 'Trending',
     tabBarIcon: () => (
       <Icon
         ios="ios-book"

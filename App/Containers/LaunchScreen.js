@@ -1,45 +1,29 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native';
-import { TabNavigator, StackNavigator } from 'react-navigation';
+import { TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 // import screen
-import HomeScreen from './HomeScreen';
-import StoryScreen from './StoryScreen';
-import StoryDetailScreen from './TrendingScreen';
-import SettingScreen from './PlayNowScreen';
-
-export const ContentStack = StackNavigator({
-  Content: { screen: StoryScreen },
-  ContentDetail: { screen: StoryDetailScreen },
-});
-
-export const SettingsStack = StackNavigator({
-  Settings: { screen: SettingScreen },
-});
+import TrendingScreen from './TrendingScreen';
+import PlayNowScreen from './PlayNowScreen';
 
 const LaunchScreen = TabNavigator(
   {
-    HomeTab: { screen: HomeScreen },
-    StoryTab: { screen: StoryDetailScreen },
-    SettingTab: { screen: SettingsStack },
+    TrendingTab: { screen: TrendingScreen },
+    PlayNowTab: { screen: PlayNowScreen },
   },
   {
     tabBarPosition: 'bottom',
-    initialRouteName: 'HomeTab',
+    initialRouteName: 'TrendingTab',
     tabBarOptions: {
       bottomNavigationOptions: {
         labelColor: 'white',
         rippleColor: 'white',
         tabs: {
-          HomeTab: {
+          TrendingTab: {
             barBackgroundColor: '#00796B',
           },
-          StoryTab: {
+          PlayNowTab: {
             barBackgroundColor: '#37474F',
-          },
-          SettingTab: {
-            barBackgroundColor: '#00796B',
           },
         },
       },
