@@ -258,7 +258,7 @@ class TrendingScreen extends Component {
         <View style={styles.container}>
           <LinearGradient
             colors={['#7AFFA0', '#62D8FF']}
-            style={{ height: 10, width: Dimensions.get('window').width }}
+            style={{ height: 5, width: Dimensions.get('window').width }}
           />
           <View
             style={{

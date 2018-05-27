@@ -176,7 +176,7 @@ export default class Player extends Component {
         });
       }
     });
-    // TrackPlayer.reset()
+    TrackPlayer.reset()
     this.togglePlayback();
     TrackPlayer.updateOptions({
       stopWithApp: true,
@@ -270,7 +270,7 @@ export default class Player extends Component {
         </View>
         <LinearGradient
           colors={['#7AFFA0', '#62D8FF']}
-          style={{ height: 10, width: Dimensions.get('window').width }}
+          style={{ height: 5, width: Dimensions.get('window').width }}
         />
         <View style={styles.playerContainer}>
           <PlayerController

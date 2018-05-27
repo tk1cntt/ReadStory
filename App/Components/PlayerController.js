@@ -46,7 +46,32 @@ class Duration extends ProgressComponent {
     super(props);
     this.state = {
       currentSecond: 0,
+      duration: 0,
     };
+    this._progressUpdates = true;
+    this._updateDuration();
+    this._timer = setInterval(this._updateDuration.bind(this), 1000);
+  }
+
+  componentWillUnmount() {
+    this._progressUpdates = false;
+    clearInterval(this._timer);
+  }
+
+  async _updateDuration() {
+    // TODO check for performance here
+    // We can create a new native function to reduces these 3 native calls to only one, if needed
+    try {
+      let data = {
+        duration: await TrackPlayer.getDuration()
+      };
+
+      if(this._progressUpdates) {
+        this.setState(data);
+      }
+    } catch(e) {
+      // The player is probably not initialized yet, we'll just ignore it
+    }
   }
 
   componentDidMount() {
@@ -57,7 +82,7 @@ class Duration extends ProgressComponent {
       )
         this.setState({
           currentSecond: this.state.currentSecond + 1,
-          // currentSecond: this.getDuration()*(this.getProgress()),
+          // currentSecond: this.state.duration * this.getProgress(),
         });
       else if (this.getProgress() === 0)
         this.setState({
@@ -67,7 +92,7 @@ class Duration extends ProgressComponent {
   }
 
   render() {
-    let duration = 0; // this.getDuration()
+    let duration = this.state.duration;
     let secDur = Math.floor(duration % 60);
     let minDur = Math.floor(duration / 60);
     const { currentSecond } = this.state;
