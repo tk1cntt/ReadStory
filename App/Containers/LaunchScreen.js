@@ -1,29 +1,50 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
-import { Images } from '../Themes'
+import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native'
+import { TabNavigator, StackNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
-// Styles
-import styles from './Styles/LaunchScreenStyles'
+// import screen
+import HomeScreen from './HomeScreen'
+import StoryScreen from './StoryScreen'
+import StoryDetailScreen from './TrendingScreen'
+import SettingScreen from './PlayNowScreen'
 
-export default class LaunchScreen extends Component {
-  render () {
-    return (
-      <View style={styles.mainContainer}>
-        <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
-        <ScrollView style={styles.container}>
-          <View style={styles.centered}>
-            <Image source={Images.launch} style={styles.logo} />
-          </View>
+export const ContentStack = StackNavigator({
+  Content: { screen: StoryScreen },
+  ContentDetail: { screen: StoryDetailScreen }
+});
 
-          <View style={styles.section} >
-            <Image source={Images.ready} />
-            <Text style={styles.sectionText}>
-              This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
-            </Text>
-          </View>
+export const SettingsStack = StackNavigator({
+  Settings: { screen: SettingScreen }
+});
 
-        </ScrollView>
-      </View>
-    )
+const LaunchScreen = TabNavigator(
+  {
+    HomeTab: { screen: HomeScreen },
+    StoryTab: { screen: StoryDetailScreen },
+    SettingTab: { screen: SettingsStack }
+  },
+  {
+    tabBarPosition: 'bottom',
+    initialRouteName: 'HomeTab',
+    tabBarOptions: {
+      bottomNavigationOptions: {
+        labelColor: 'white',
+        rippleColor: 'white',
+        tabs: {
+          HomeTab: {
+            barBackgroundColor: '#00796B'
+          },
+          StoryTab: {
+            barBackgroundColor: '#37474F'
+          },
+          SettingTab: {
+            barBackgroundColor: '#00796B'
+          }
+        }
+      }
+    }
   }
-}
+)
+
+export default LaunchScreen;
