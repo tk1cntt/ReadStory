@@ -9,46 +9,25 @@ import {
 } from 'react-native';
 
 export const TrackList = props => {
-  const {
-    thumbnail,
-    title,
-    artist,
-    song,
-    openModal,
-    openPlaylist,
-    playSong,
-    len,
-    index,
-    onError,
-    fetchFailed,
-    showDefault,
-  } = props;
+  const { thumbnail, song, numberOfSongs } = props;
   return (
     <View style={styles.container}>
       <TouchableOpacity>
-        <Image
-          style={styles.imageView}
-          onError={() => onError(song.bp_id)}
-          source={
-            showDefault || fetchFailed.includes(song.bp_id)
-              ? require('../Images/default-icon.png')
-              : { uri: thumbnail }
-          }
-        />
+        <Image style={styles.imageView} source={{ uri: thumbnail }} />
       </TouchableOpacity>
       <TouchableOpacity
         style={{ width: '70%' }}
-        onPress={() =>
-          playSong ? playSong(index, title) : openPlaylist(song, title)
-        }
+        onPress={() => console.log('Play song', song)}
       >
-        <Text style={styles.titleText}>{title ? title : ''}</Text>
-        <Text style={styles.artistText}>{artist ? artist : ''}</Text>
-        <Text style={styles.artistText}>{len ? `${len} songs` : ''}</Text>
+        <Text style={styles.titleText}>{song ? song.title : ''}</Text>
+        <Text style={styles.artistText}>{song ? song.artist : ''}</Text>
+        <Text style={styles.artistText}>
+          {numberOfSongs ? `${numberOfSongs} songs` : ''}
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.breadCumsLayout}
-        onPress={() => (openModal ? openModal(song, title) : {})}
+        onPress={() => console.log('Open song model', song)}
       >
         <View style={styles.breadCums} />
         <View style={styles.breadCums} />

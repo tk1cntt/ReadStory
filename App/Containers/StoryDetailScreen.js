@@ -107,4 +107,7 @@ const mapDispatchToProps = dispatch => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PlayScreen);

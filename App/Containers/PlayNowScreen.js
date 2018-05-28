@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {  Icon } from 'native-base';
+import { Icon } from 'native-base';
 
 // Styles
 import styles from './Styles/SettingScreenStyle';
@@ -21,7 +21,7 @@ class PlayNowScreen extends Component {
   };
 
   render() {
-    return <Player />;
+    return <Player navigation={this.props.navigation} />;
   }
 }
 
@@ -33,4 +33,7 @@ const mapDispatchToProps = dispatch => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayNowScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PlayNowScreen);

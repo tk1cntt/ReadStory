@@ -12,7 +12,7 @@ import {
   AsyncStorage,
   Modal,
 } from 'react-native';
-// import PlayerModal from '../../../common/PlayerModal'
+import PlaylistModal from './PlaylistModal';
 import TrackQueue from './TrackQueue';
 // import { addToLibrary, ifInLibrary, removeFromLibrary } from '../../../common/helpers'
 import { BarIndicator } from 'react-native-indicators';
@@ -63,13 +63,13 @@ class Duration extends ProgressComponent {
     // We can create a new native function to reduces these 3 native calls to only one, if needed
     try {
       let data = {
-        duration: await TrackPlayer.getDuration()
+        duration: await TrackPlayer.getDuration(),
       };
 
-      if(this._progressUpdates) {
+      if (this._progressUpdates) {
         this.setState(data);
       }
-    } catch(e) {
+    } catch (e) {
       // The player is probably not initialized yet, we'll just ignore it
     }
   }
@@ -198,15 +198,15 @@ export default class PlayerController extends Component {
     style: {},
   };
 
-  toggleModal = () => {
-    console.log('toggleModal');
-    /*
-    let { popupModal } = this.state
+  toggleModal = libraryState => {
+    let { popupModal, library } = this.state;
     this.setState({
       popupModal: !popupModal,
-      showPlaylists: false
-    })
-    */
+      showPlaylists: false,
+      library: typeof libraryState === 'boolean' ? !library : library,
+      addPlaylistModal: libraryState === 'addPlaylist' ? false : true,
+      addPlaylistModal: false,
+    });
   };
 
   navigateToScreen = screen => {
@@ -261,6 +261,30 @@ export default class PlayerController extends Component {
     if (this.state.library) path = require('../Images/library-active.png');
     return (
       <View style={styles.controller}>
+        <PlaylistModal
+          active={this.state.popupModal}
+          closeModal={this.toggleModal}
+          navigateToScreen={this.navigateToScreen}
+          song={track}
+          showPlaylists={this.showPlaylists}
+          viewPlaylists={this.state.showPlaylists}
+          playlistName={this.state.playlistNames}
+          ifInLibrary={this.state.library}
+          addPlaylistModal={this.state.addPlaylistModal}
+          songs={songs}
+        />
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.showQueue}
+          onRequestClose={() => this.toggleQueueModal()}
+        >
+          <TrackQueue
+            trackList={this.props.trackList}
+            handleQueue={this.chooseTrackFromQueue}
+            closeModal={this.toggleQueueModal}
+          />
+        </Modal>
         <Text style={styles.songTitle}>{track.title}</Text>
         <Text style={styles.songArtist}>{track.artist}</Text>
 

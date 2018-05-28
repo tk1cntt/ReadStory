@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
-import { TabNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import { Animated, Easing } from 'react-native';
 
 // import screen
 import TrendingScreen from './TrendingScreen';
 import PlayNowScreen from './PlayNowScreen';
 
-const LaunchScreen = TabNavigator(
+const LaunchScreen = StackNavigator(
   {
-    TrendingTab: { screen: TrendingScreen },
-    PlayNowTab: { screen: PlayNowScreen },
+    Trending: { screen: TrendingScreen },
+    Library: { screen: TrendingScreen },
+    Search: { screen: TrendingScreen },
+    PlayNow: { screen: PlayNowScreen },
   },
   {
-    tabBarPosition: 'bottom',
-    initialRouteName: 'TrendingTab',
-    tabBarOptions: {
-      bottomNavigationOptions: {
-        labelColor: 'white',
-        rippleColor: 'white',
-        tabs: {
-          TrendingTab: {
-            barBackgroundColor: '#00796B',
-          },
-          PlayNowTab: {
-            barBackgroundColor: '#37474F',
-          },
-        },
+    navigationOptions: { title: 'Welcome', header: null },
+    transitionConfig: () => ({
+      transitionSpec: {
+        duration: 0,
+        timing: Animated.timing,
+        easing: Easing.step0,
       },
-    },
+    }),
   },
 );
 

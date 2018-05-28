@@ -5,14 +5,11 @@ import {
   Text,
   TouchableOpacity,
   View,
-  ViewPropTypes,
   Dimensions,
-  AsyncStorage,
-  Modal,
   ScrollView,
 } from 'react-native';
 
-class QueueList extends Component {
+class TrackQueue extends Component {
   render() {
     const { handleQueue, trackList, closeModal } = this.props;
     console.log(trackList);
@@ -75,7 +72,7 @@ class QueueList extends Component {
   }
 }
 
-export default QueueList;
+export default TrackQueue;
 
 const styles = StyleSheet.create({
   container: {

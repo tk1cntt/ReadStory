@@ -13,14 +13,9 @@ import {
   EventEmitter,
 } from 'react-native';
 import PlayerController from './PlayerController';
-// import Footer from './../../common/Footer'
-// import data from '../../common/data.json'
-// import { BASE_URL } from '../../utils/config/ApiConf'
+import Footer from './Footer';
 import LinearGradient from 'react-native-linear-gradient';
-
-// import { closeApp } from '../../common/helpers'
 let { height, width } = Dimensions.get('window');
-
 let trackList = require('../Containers/data.json');
 
 export default class Player extends Component {
@@ -31,100 +26,8 @@ export default class Player extends Component {
       track: {},
       trackList: [],
       songs: [],
-      lastState: -1,
     };
   }
-
-  /*
-	componentWillMount() {
-		if (this.props.navigation.state.params ) {
-			const { index, storageKey, name, search } = this.props.navigation.state.params
-			if (search) {
-				let trackList = songs;
-				trackList.unshift(trackList[index])
-				trackList.splice(index + 1, 1)
-				let obj, list = []
-				trackList.forEach((track, index) => {
-					obj = {}
-					obj.url = `${BASE_URL}/stream/${track.bp_id}`
-					obj.artwork = track.cover
-					obj.title = track.title
-					obj.id = index.toString()
-					obj.bp_id = track.bp_id
-					obj.artist = track.artist
-					obj.thumbnail = track.thumbnail
-					list.push(obj)
-				})
-				trackList = list
-				this.setState({
-					track: trackList[0],
-					trackList: trackList,
-					songs: songs
-				})
-			}
-			else																												//Handle Queues from Library/Trending/Playlist
-				AsyncStorage.getItem(storageKey, (err, res) => {
-					if (name)
-						trackList = JSON.parse(res)[name]
-					else
-						trackList = JSON.parse(res)
-					let songs = trackList
-					trackList.unshift(trackList[index])
-					trackList.splice(index + 1, 1)
-					let obj, list = []
-					trackList.forEach(track => {
-						obj = {}
-						obj.url = track.streamlink
-						obj.artwork = track.cover
-						obj.title = track.title
-						obj.id = index.toString()
-						obj.bp_id = track.bp_id
-						obj.artist = track.artist
-						obj.thumbnail = track.thumbnail
-						list.push(obj)
-					})
-					trackList = list
-					this.setState({
-						track: trackList[0],
-						trackList: trackList,
-						songs: songs
-					})
-
-				})
-		}
-		else {																									//Handle Now Playing
-			let queue = []
-			TrackPlayer.getQueue()
-			.then(results => {
-				if (results.length === 0)
-					this.fetchFromTrending()
-				else {
-					queue = results
-					TrackPlayer.getCurrentTrack()
-					.then(async(currTrackId) => {
-						let track = await TrackPlayer.getTrack(currTrackId)
-						let state = TrackPlayer.STATE_PLAYING
-						TrackPlayer.getState()
-						.then(state =>{
-							state = state
-							this.setState({
-								track: track,
-								playbackState: state
-							})
-						})
-
-					})
-					.catch(err => console.log("Error"))
-				}
-
-			})
-			.catch(err => {
-				this.fetchFromTrending()
-			})
-		}
-
-	}
-  */
 
   fetchFromTrending() {
     let songs = trackList;
@@ -151,9 +54,7 @@ export default class Player extends Component {
 
   componentDidMount() {
     this.fetchFromTrending();
-    //*
     TrackPlayer.setupPlayer();
-    //*
     TrackPlayer.registerEventHandler(async data => {
       if (data.type === 'playback-track-changed') {
         if (data.nextTrack) {
@@ -176,7 +77,7 @@ export default class Player extends Component {
         });
       }
     });
-    TrackPlayer.reset()
+    TrackPlayer.reset();
     this.togglePlayback();
     TrackPlayer.updateOptions({
       stopWithApp: true,
@@ -187,11 +88,6 @@ export default class Player extends Component {
         TrackPlayer.CAPABILITY_SKIP_TO_PREVIOUS,
       ],
     });
-    //*/
-  }
-
-  componentWillUnmount() {
-    //AppRegistry.removeDeviceListeners()
   }
 
   togglePlayback = async () => {
@@ -252,7 +148,6 @@ export default class Player extends Component {
 
   render() {
     const { playbackState, track, trackList } = this.state;
-    // console.log('first', (playbackState === TrackPlayer.STATE_BUFFERING || playbackState === TrackPlayer.STATE_NONE || playbackState === TrackPlayer.STATE_STOPPED))
     return (
       <View style={styles.container}>
         <View style={styles.backgroundContainer}>
@@ -269,10 +164,9 @@ export default class Player extends Component {
           />
         </View>
         <LinearGradient
-          colors={['#7AFFA0', '#62D8FF']}
-          style={{ height: 5, width: Dimensions.get('window').width }}
-        />
-        <View style={styles.playerContainer}>
+          colors={['#FFFFFF', '#D8D8D8', '#4A4A4A', '#000000']}
+          style={styles.playerContainer}
+        >
           <PlayerController
             onNext={() => this.skipToNext()}
             onPrevious={() => this.skipToPrevious()}
@@ -285,7 +179,8 @@ export default class Player extends Component {
             shuffleTracks={this.shuffleArray}
             songs={this.state.songs}
           />
-        </View>
+        </LinearGradient>
+        <Footer screenName={'Player'} navigation={this.props.navigation} />
       </View>
     );
   }
@@ -313,7 +208,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
     justifyContent: 'center',
     width: '100%',
-    height: '100%',
+    height: Dimensions.get('window').height - 80,
     alignItems: 'center',
   },
 });
