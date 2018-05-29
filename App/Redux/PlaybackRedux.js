@@ -32,11 +32,11 @@ export const init = (state) =>
   state.merge({ init: true })
 
 export const state = (state, action) => {
-  return state.merge({ state: action.state })
+  return state.merge({ playbackState: action.state })
 }
 
 export const track = (state, action) =>
-  state.merge({ currentTrack: action.track })
+  state.merge({ playbackTrack: action.track })
 
 /* ------------- Hookup Reducers To Types ------------- */
 

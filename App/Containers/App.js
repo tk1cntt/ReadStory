@@ -29,6 +29,17 @@ class App extends Component {
   }
 }
 
+TrackPlayer.setupPlayer();
+TrackPlayer.updateOptions({
+  stopWithApp: true,
+  capabilities: [
+    TrackPlayer.CAPABILITY_PLAY,
+    TrackPlayer.CAPABILITY_PAUSE,
+    TrackPlayer.CAPABILITY_SEEK_TO,
+    TrackPlayer.CAPABILITY_SKIP_TO_NEXT,
+    TrackPlayer.CAPABILITY_SKIP_TO_PREVIOUS,
+  ],
+});
 TrackPlayer.registerEventHandler(createEventHandler(store));
 
 // allow reactotron overlay for fast design in dev mode

@@ -54,40 +54,8 @@ export default class Player extends Component {
 
   componentDidMount() {
     this.fetchFromTrending();
-    TrackPlayer.setupPlayer();
-    TrackPlayer.registerEventHandler(async data => {
-      if (data.type === 'playback-track-changed') {
-        if (data.nextTrack) {
-          const track = await TrackPlayer.getTrack(data.nextTrack);
-          this.setState({
-            track: track,
-          });
-        }
-      } else if (data.type == 'remote-play') {
-        TrackPlayer.play();
-      } else if (data.type == 'remote-pause') {
-        TrackPlayer.pause();
-      } else if (data.type == 'remote-next') {
-        TrackPlayer.skipToNext();
-      } else if (data.type == 'remote-previous') {
-        TrackPlayer.skipToPrevious();
-      } else if (data.type === 'playback-state') {
-        this.setState({
-          playbackState: data.state,
-        });
-      }
-    });
     TrackPlayer.reset();
     this.togglePlayback();
-    TrackPlayer.updateOptions({
-      stopWithApp: true,
-      capabilities: [
-        TrackPlayer.CAPABILITY_PLAY,
-        TrackPlayer.CAPABILITY_PAUSE,
-        TrackPlayer.CAPABILITY_SKIP_TO_NEXT,
-        TrackPlayer.CAPABILITY_SKIP_TO_PREVIOUS,
-      ],
-    });
   }
 
   togglePlayback = async () => {
@@ -171,8 +139,8 @@ export default class Player extends Component {
             onNext={() => this.skipToNext()}
             onPrevious={() => this.skipToPrevious()}
             onTogglePlayback={() => this.togglePlayback()}
-            playbackState={playbackState}
-            track={track}
+            playbackState={this.props.playbackState}
+            track={this.props.playbackTrack}
             navigation={this.props.navigation}
             trackList={trackList}
             handleQueue={this.handleQueue}

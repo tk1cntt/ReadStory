@@ -176,9 +176,10 @@ export default class PlayerController extends Component {
   // }
 
   componentWillReceiveProps(nextProps) {
-    this.initializeLibrary(nextProps.track.id);
+    // this.initializeLibrary(nextProps.track.id);
   }
 
+  /*
   initializeLibrary = async id => {
     ifInLibrary(id, value => {
       this.setState({
@@ -186,6 +187,7 @@ export default class PlayerController extends Component {
       });
     });
   };
+  */
 
   static propTypes = {
     style: ViewPropTypes.style,
