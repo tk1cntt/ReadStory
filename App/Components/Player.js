@@ -180,7 +180,7 @@ export default class Player extends Component {
             songs={this.state.songs}
           />
         </LinearGradient>
-        <Footer screenName={'Player'} navigation={this.props.navigation} />
+        <Footer screenName={'PlayNow'} navigation={this.props.navigation} />
       </View>
     );
   }

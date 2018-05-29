@@ -2,8 +2,10 @@ import '../Config';
 import DebugConfig from '../Config/DebugConfig';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import TrackPlayer from 'react-native-track-player';
 import RootContainer from './RootContainer';
 import createStore from '../Redux';
+import createEventHandler from '../Lib/logic/event-handler';
 
 // create our store
 const store = createStore();
@@ -26,6 +28,8 @@ class App extends Component {
     );
   }
 }
+
+TrackPlayer.registerEventHandler(createEventHandler(store));
 
 // allow reactotron overlay for fast design in dev mode
 export default (DebugConfig.useReactotron ? console.tron.overlay(App) : App);
