@@ -66,6 +66,7 @@ export default class Player extends Component {
       await TrackPlayer.add(trackList);
       TrackPlayer.play();
     } else {
+      const { playbackState } = this.props;
       if (playbackState === TrackPlayer.STATE_PAUSED) {
         TrackPlayer.play();
       } else {

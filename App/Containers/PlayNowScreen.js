@@ -21,7 +21,13 @@ class PlayNowScreen extends Component {
   };
 
   render() {
-    return <Player playbackState={this.props.playbackState} playbackTrack={this.props.playbackTrack} navigation={this.props.navigation} />;
+    return (
+      <Player
+        playbackState={this.props.playbackState}
+        playbackTrack={this.props.playbackTrack}
+        navigation={this.props.navigation}
+      />
+    );
   }
 }
 
